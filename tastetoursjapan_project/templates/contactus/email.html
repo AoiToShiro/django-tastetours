@@ -1,0 +1,26 @@
+<!-- templates/contactus/email.html -->
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br><br><br>
+<h1>Contact Us</h1>
+<br>
+<div class="form-group">
+  <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="form-actions">
+        <button class="btn btn-primary"type="submit">Submit</button>
+      </div>
+  </form>
+</div>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><h4 class="text-success">{{ message }}</h4></li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock content %}
