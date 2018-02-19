@@ -101,7 +101,7 @@ requests==2.18.4
 requests-oauthlib==0.8.0
 rjsmin==1.0.12
 simplegeneric==0.8.1
-six==1.11.0
+# six==1.11.0 Heroku already has
 snowballstemmer==1.2.1
 Sphinx==1.6.6
 sphinxcontrib-websupport==1.0.1
