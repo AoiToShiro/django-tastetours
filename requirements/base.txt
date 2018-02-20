@@ -9,7 +9,7 @@ wheel==0.30.0
 django==1.11.9 # pyup: <2.0
 
 # Configuration
-# django-environ==0.4.4 commented out for heroku deployment as there is a conflict
+django-environ==0.4.4
 whitenoise==3.3.1
 
 
@@ -23,7 +23,7 @@ django-model-utils==3.1.1
 Pillow==5.0.0
 
 # Password storage
-# argon2-cffi==18.1.0 just to try to get it into heroku
+argon2-cffi==18.1.0
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
@@ -47,8 +47,8 @@ redis==2.10.6
 celery==3.1.25
 
 
-
-rcssmin==1.0.6 --install-option="--without-c-extensions"
+# rcssmin==1.0.6 --install-option="--without-c-extensions" (on windows)
+rcssmin==1.0.6
 django-compressor==2.2
 
 
