@@ -9,7 +9,7 @@ wheel==0.30.0
 django==1.11.9 # pyup: <2.0
 
 # Configuration
-django-environ==0.4.4
+# django-environ==0.4.4 commented out for heroku deployment as there is a conflict
 whitenoise==3.3.1
 
 
@@ -23,7 +23,7 @@ django-model-utils==3.1.1
 Pillow==5.0.0
 
 # Password storage
-argon2-cffi==18.1.0
+# argon2-cffi==18.1.0 just to try to get it into heroku
 
 # For user registration, either via email or social
 # Well-built with regular release cycles!
