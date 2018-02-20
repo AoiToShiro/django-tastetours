@@ -9,7 +9,7 @@ wheel==0.30.0
 django==1.11.9 # pyup: <2.0
 
 # Configuration
-# django-environ==0.4.4 commented out for heroku deplyment as there is a conflict
+# django-environ==0.4.4 commented out for heroku deployment as there is a conflict
 whitenoise==3.3.1
 
 
