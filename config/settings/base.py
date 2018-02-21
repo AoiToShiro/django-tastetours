@@ -110,13 +110,14 @@ FIXTURE_DIRS = (
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
 
-ANYMAIL = {
-
-    "MAILGUN_SENDER_DOMAIN":'customersupport.tastetourstokyo.com',
-
-    }
-ANYMAIL_MAILGUN_API_KEY = get_env_variable('MAILGUN_API_KEY')
-ANYMAIL_MAILGUN_API_URL = get_env_variable('MAILGUN_API_URL')
+# Only uncomment to use Mailgun locally
+# ANYMAIL = {
+#
+#     "MAILGUN_SENDER_DOMAIN":'customersupport.tastetourstokyo.com',
+#
+#     }
+# ANYMAIL_MAILGUN_API_KEY = get_env_variable('MAILGUN_API_KEY')
+# ANYMAIL_MAILGUN_API_URL = get_env_variable('MAILGUN_API_URL')
 
 
 EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
