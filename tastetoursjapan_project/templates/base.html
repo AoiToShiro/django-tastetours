@@ -23,7 +23,7 @@
     <link rel="icon" href="{% static 'images/favicon.png' %}">
 
     <!-- Your stuff: Third-party CSS libraries go here -->
-    {% compress css %}
+    {% comment %} {% compress css %} gives an error in Heroku not sure what it's for{% endcomment %}
     <!-- Material Design Bootstrap -->
     <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
     {% comment %} shards material design bootstrap {% endcomment %}
