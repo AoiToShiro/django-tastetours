@@ -10,7 +10,7 @@
             <div class="template_content">
                 <dl>
                     <div class="pp-img-container">
-                        <p>While using the services offered by Taste Tours Japan, we will only ever request the minimum amount of personal information to deliver such services. Payments are processes via Stripe and no payment informaton is shared with Taste Tours Japan. Please refer to the Stripe Privacy Terms (https://stripe.com/us/privacy)</p>
+                        <p>While using the services offered by Taste Tours Japan, we will only ever request the minimum amount of personal information to deliver such services. Payments are processes via Stripe and no sensitive payment informaton (such as credit card numbers) are shared with Taste Tours Japan. Please refer to the Stripe Privacy Terms (https://stripe.com/us/privacy)</p>
                     </div>
                     <hr>
                     <dt><h3>What constitutes “personal information”</h3></dt>
@@ -115,7 +115,7 @@
                     <hr>
                     <dt><h3>Inquires regarding personal information</h3></dt>
                     <dd>
-                        <p>Please use the "contact us" form<br>
+                        <p>Please use the <a href="{% url 'contactus:email' %}">"contact us"</a> form<br>
                       </dd>
                 </dl>
             </div>
@@ -131,6 +131,5 @@
     <p>&copy; 2018 Taste Tours Japan. &middot; <a href="{% url 'privacy' %}">Privacy</a> &middot; <a href="{% url 'terms' %}">Terms</a></p>
   </footer>
 </div>
-
 
 {% endblock content %}

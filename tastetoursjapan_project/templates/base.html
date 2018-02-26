@@ -25,7 +25,7 @@
     <!-- Your stuff: Third-party CSS libraries go here -->
     {% compress css %}
     <!-- Material Design Bootstrap -->
-    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mdb.css' %}" rel="stylesheet">
     {% comment %} shards material design bootstrap {% endcomment %}
     {% comment %} <link rel="stylesheet" href="{% static 'css/shards.min.css' %}"> {% endcomment %}
     <!-- This file stores project-specific CSS -->
@@ -135,7 +135,7 @@
 
       <!-- Your stuff: Third-party javascript libraries go here -->
       <!-- MDB core JavaScript -->
-      <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+      {% comment %} <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script> {% endcomment %}
       <!-- place project specific Javascript in this file -->
       {% compress js %}
       <script src="{% static 'js/project.js' %}"></script>
