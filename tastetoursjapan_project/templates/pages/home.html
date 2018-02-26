@@ -2,6 +2,8 @@
 {% load staticfiles %}
 {% block content %}
 
+
+
 <br>
 <br>
 <br>
@@ -123,7 +125,7 @@
 <!--First row-->
 <div class="row mt-5 wow">
     <!--First column-->
-    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.2s">
+    <div class="col-lg-4 animated wow fadeIn" data-wow-delay="0.2s">
 
         <!--Card-->
         <div class="card mb-r">
@@ -136,8 +138,10 @@
                 <!--Title-->
                 <h4 class="card-title dark-grey-text"><strong>Edo Outpost</strong></h4>
                 <!--Text-->
-                <p class="card-text">Walk the streets of the old Edo outpost "Togoshi Ginza" and sample the delicious street food on offer</p>
-                <a href="http://bit.ly/2E9q45D" class="btn btn-secondary btn-md">Location</a>
+                <p class="card-text">Tokyo used to be called "Edo". Walk the streets of the old Edo trading outpost "Togoshi Ginza" and sample the delicious street food on offer</p>
+                <button type="button" class="btn btn-secondary btn-md" data-toggle="modal" data-target=".bd-example-modal-lg">Location</button>
+
+
                 <a href="{% url 'tours:edooutpost' %}" class="btn btn-primary btn-md">Tour Info</a>
             </div>
 
@@ -148,7 +152,7 @@
     <!--/.First column-->
 
     <!--Second column-->
-    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.4s">
+    <div class="col-lg-4 animated wow fadeIn" data-wow-delay="0.4s">
 
         <!--Card-->
         <div class="card mb-r">
@@ -173,7 +177,7 @@
     <!--/.Second column-->
 
     <!--Third column-->
-    <div class="col-lg-4 wow fadeIn" data-wow-delay="0.6s">
+    <div class="col-lg-4 animated wow fadeIn" data-wow-delay="0.6s">
 
         <!--Card-->
         <div class="card mb-r">
@@ -206,6 +210,8 @@
 </div>
 
 {% comment %} Add button to take you to the contact page {% endcomment %}
+
+
 
 {% comment %} End Tour card section {% endcomment %}
 
@@ -263,7 +269,23 @@
 
   </div><!-- /.container -->
 
+{% comment %} GOOGLE MAPS MODEL FUNCTIONALITY AT THE END DUE TO CONFLICTS ON Z-INDEX {% endcomment %}
 
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Edo Outpost Location</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <div id="edo" style="width:100%;height:500px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- FOOTER -->
 
   <footer class="container">
@@ -299,9 +321,29 @@
     </script> {% endcomment %}
     {% comment %} shard date picker java script {% endcomment %}
 
-</script>
+{% comment %} MDB ANIMATION {% endcomment %}
+    <script>$new WOW().init();
+    </script>
 
+{% comment %} GOOGLEMAPS API {% endcomment %}
 
+    <script>
+    function initMap() {
+      var myCenter = new google.maps.LatLng(35.615703, 139.714740);
+      var mapCanvas = document.getElementById("edo");
+      var mapOptions = {center: myCenter, zoom: 15};
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+      var marker = new google.maps.Marker({position:myCenter});
+      marker.setMap(map);
+
+      var infowindow = new google.maps.InfoWindow({
+        content: "Oustide Togoshi Ginza Train Station"
+      });
+      infowindow.open(map,marker);
+    }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAax6go2-Dm0m32EVFt-l2kqBbpap8kgVE&callback=initMap"></script>
 
 
 {% endblock content %}
