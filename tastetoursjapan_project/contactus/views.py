@@ -29,5 +29,5 @@ def emailView(request):
                 msg.send()
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            messages.success(request, 'The form has been sent successfully. Thank you for getting in touch with us!')
+            messages.success(request, 'The form has been sent successfully. Thank you for getting in touch with us!' , extra_tags='alert')
     return render(request, "contactus/email.html", {'form': form})
