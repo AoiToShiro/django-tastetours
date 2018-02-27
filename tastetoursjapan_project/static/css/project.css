@@ -46,6 +46,57 @@ body {
   height: 32rem;
   }
 
+.carousel .carousel-control-next-icon,.carousel .carousel-control-prev-icon{
+  width:36px;height:36px;
+  }
+
+.carousel .carousel-control-prev-icon{
+  background-image:url("/static/images/svg/arrow_left.svg")
+  }
+
+.carousel .carousel-control-next-icon{
+  background-image:url('/static/images/svg/arrow_right.svg')
+  }
+
+.carousel .carousel-indicators li{
+  max-width:10px;
+  height:10px;
+  border-radius:50%;
+  cursor:pointer;
+  }
+
+.carousel .video-fluid{
+  height:100%;
+  width:100%;
+  }
+
+.carousel-fade .carousel-item{
+  opacity:0;
+  -webkit-transition-duration:.6s;
+  transition-duration:.6s;
+  -webkit-transition-property:opacity;
+  transition-property:opacity;
+  }
+
+.carousel-fade .carousel-item-next.carousel-item-left,.carousel-fade .carousel-item-prev.carousel-item-right,.carousel-fade .carousel-item.active{
+  opacity:1;
+  }
+
+.carousel-fade .active.carousel-item-left,.carousel-fade .active.carousel-item-right{
+  opacity:0;
+  }
+
+.carousel-fade .active.carousel-item-left,.carousel-fade .active.carousel-item-prev,.carousel-fade .carousel-item-next,.carousel-fade .carousel-item-prev,.carousel-fade .carousel-item.active{
+  -webkit-transform:translateX(0);
+  -ms-transform:translateX(0);
+  transform:translateX(0);
+  }
+
+@supports (transform-style:preserve-3d){
+  .carousel-fade .active.carousel-item-left,.carousel-fade .active.carousel-item-prev,.carousel-fade .carousel-item-next,.carousel-fade .carousel-item-prev,.carousel-fade .carousel-item.active{
+    -webkit-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0)}
+  }
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -125,7 +176,7 @@ body {
 }
 
 /* material design CSS components taken from color tool via code pen */
-.mdc-components {
+/* .mdc-components {
   box-sizing: border-box;
   display: flex;
   font-family: Roboto;
@@ -722,25 +773,25 @@ body {
 
   .mdc-component__toolbar .mdc-fab.mdc--theme-secondary.mdc-ripple-upgraded::after {
     background-color: rgba(0, 0, 0, 0.16);
-  }
+  } */
 
 
-/* MANAGE JUMBOTRON ON MOBILE */
-h4 {
+/* MANAGE JUMBOTRON AND ADVENTUROUS CAROUSEL ON MOBILE */
+.jumbowrap {
   word-wrap: break-word;
 }
 
 /* GOOGLE MAPS CSS */
-.modal {
+/* .modal {
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place front is invalid - may break your css so removed */
-    padding-top: 100px; /* Location of the box - don't know what this does?  If it is to move your modal down by 100px, then just change top below to 100px and remove this*/
-    left: 0;
+    /* position: fixed; /* Stay in place front is invalid - may break your css so removed */
+    /* padding-top: 100px; /* Location of the box - don't know what this does?  If it is to move your modal down by 100px, then just change top below to 100px and remove this*/
+    /* left: 0;
     right:0; /* Full width (left and right 0) */
-    top: 0;
+    /* top: 0;
     bottom: 0; /* Full height top and bottom 0 */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    z-index: 9999; /* Sit on top - higher than any other z-index in your site*/
-}
+    /* overflow: auto; /* Enable scroll if needed */
+    /* background-color: rgb(0,0,0); /* Fallback color */
+    /* background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    /* z-index: 9999; /* Sit on top - higher than any other z-index in your site*/
+/* } */
