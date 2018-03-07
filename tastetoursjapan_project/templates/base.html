@@ -78,8 +78,8 @@
             {% endif %} {% endcomment %}
               </li>
                 <li class="nav-item dropdown px-3">
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tours</a>
-                  <div class="dropdown-menu">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tours</a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{% url 'tours:edooutpost' %}">Edo Outpost</a>
                     {% comment %} to add as new tours come on line {% endcomment %}
                     {% comment %} <a class="dropdown-item" href="#">Another action</a>
@@ -90,7 +90,7 @@
                 </li>
                <li>
                 <form class="form-inline px-3">
-                 <button class="btn btn-success btn-sm my-2" type="Button">Book Now</button>
+                 <a href='https://tickets.tastetourstokyo.com/?style=list' class="btn btn-success btn-sm my-2">Book Now</a>
                 </form>
                 </li>
                 <li>

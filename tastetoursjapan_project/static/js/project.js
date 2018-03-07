@@ -174,3 +174,5 @@ for (var i = 0, li; li = interactiveListItems[i]; i++) {
 //   buttonClose: 'picker__button--close',
 //   buttonToday: 'picker__button--today'
 // }
+
+// CHERRY BLOSSOM FALLING animation
