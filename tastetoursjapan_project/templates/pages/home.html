@@ -7,6 +7,7 @@
 <br>
 <br>
 <br>
+
 <main role="main">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -33,7 +34,7 @@
           <div class="carousel-caption">
             <h1 class="display-4">Special Opening Offer!</h1>
             <h4>Walking Tours start from just ¥4,999 per person</h4>
-            <p><a class="btn btn-primary" href="{% url 'tours:edooutpost' %}" role="button">View Tour</a></p>
+            <p><a class="btn btn-primary" href="{% url 'tours:edooutpost' %}" role="button">Tour Info</a></p>
           </div>
         </div>
       </div>
@@ -52,7 +53,7 @@
         <img class="forth-slide " src="{% static 'images/Octopuss.jpg' %}" alt="Forth slide">
         <div class="container">
           <div class="carousel-caption jumbowrap">
-            <h1 class="display-5 text-light">Adventurous?</h1>
+            <h1 class="display-4 text-light">Adventurous?</h1>
             <h4 class="text-white">Excellent! You've come to the right place</h4>
 
             {% comment %} <p><a class="btn btn-primary" href="#" role="button">Browse gallery</a></p> {% endcomment %}
@@ -219,7 +220,7 @@
 {% comment %} date picker to take user to the ticket site {% endcomment %}
 
     <h2 class="featurette-heading">Check Tour Availability</h2>
-        <button class="btn btn-primary btn-md" type="submit" name="button">Search</button>
+        <a href='https://tickets.tastetourstokyo.com/?style=list' class="btn btn-primary btn-md">Search</a>
 
 
 {% comment %} unsuccessful datepicker code {% endcomment %}
@@ -268,7 +269,6 @@
     <!-- /END THE FEATURETTES -->
 
   </div><!-- /.container -->
-
 {% comment %} GOOGLE MAPS MODEL FUNCTIONALITY AT THE END DUE TO CONFLICTS ON Z-INDEX {% endcomment %}
 
   <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
@@ -322,8 +322,10 @@
     {% comment %} shard date picker java script {% endcomment %}
 
 {% comment %} MDB ANIMATION {% endcomment %}
-    <script>$new WOW().init();
-    </script>
+    {% comment %} <script src="{% static 'js/mdb.js' %}"></script>
+    <script>
+    new WOW().init();
+    </script> {% endcomment %}
 
 {% comment %} GOOGLEMAPS API {% endcomment %}
 
