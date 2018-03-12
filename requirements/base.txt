@@ -6,7 +6,7 @@ wheel==0.30.0
 
 
 # Conservative Django
-django==2.0.2 # pyup: <2.0
+django==2.0.2 # pyup: <2.1
 
 # Configuration
 django-environ==0.4.4
@@ -92,3 +92,4 @@ whichcraft==0.4.1
 wincertstore==0.2
 django-debug-toolbar==1.9.1
 django-extensions==1.9.9
+django-tinymce==2.7.0
