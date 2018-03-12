@@ -30,6 +30,7 @@
     {% comment %} <link rel="stylesheet" href="{% static 'css/shards.min.css' %}"> {% endcomment %}
     <!-- This file stores project-specific CSS -->
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
+
     {% endcompress %}
     {% endblock %}
 
@@ -53,10 +54,8 @@
               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             Don't think we need a home item {% endcomment %}
-            {% comment %} <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
-            </li>
-            Don't need an about page at the moment {% endcomment %}
+
+
             {% comment %} {% if request.user.is_authenticated %}
               <li class="nav-item py-0">
                 {# URL provided by django-allauth/account/urls.py #}
@@ -87,6 +86,9 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item disabled" href="{% url 'tours:tours' %}">All Tours</a>
                   </div>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog:post_list_view' %}">Blog</a>
+                  </li>
                 </li>
                <li>
                 <form class="form-inline px-3">
