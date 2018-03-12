@@ -49,9 +49,11 @@ DJANGO_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
 
     # Useful template tags:
     # 'django.contrib.humanize',
+
 
     # Admin
     'django.contrib.admin',
@@ -63,6 +65,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     # 'anymail', duplicate to production settings
+    'tinymce', #used for blog WISYWIG
 ]
 
 # Apps specific for this project go here.
@@ -72,6 +75,7 @@ LOCAL_APPS = [
     # Your stuff: custom apps go here
     'tours',
     'contactus',
+    'blog',
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -321,3 +325,25 @@ ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
 # ------------------------------------------------------------------------------
+# Timymce settings to support blog
+TINYMCE_JS_URL = os.path.join(MEDIA_URL, "path/to/tiny_mce/tiny_mce.js")
+TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, "path/to/tiny_mce")
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste,searchreplace",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+}
+TINYMCE_FILEBROWSER = False
+TINYMCE_SPELLCHECKER = True
+TINYMCE_COMPRESSOR = True
+TINYMCE_EXTRA_MEDIA = {
+    'css': {
+        'all': [
+            ...
+        ],
+    },
+    'js': [
+        ...
+    ],
+}

@@ -1,0 +1,53 @@
+{% extends "blog/master.html" %}
+
+{% block title %}Taste Tours blog{% endblock %}
+
+{% block blogcontent %}
+   <h2 class="page-header">Taste Tours - Recent Posts</h2>
+   <hr class="divider">
+
+
+    {% comment %} {% for post in posts|slice:":1" %}
+
+
+    <div class="card ">
+      <img class="card-img-top img-fluid width: 100% \9;" style='background-color:#6ec6ff' src="{{ MEDIA_URL}}{{ post.illustration }}" height="420" alt="Blog image missing">
+
+      <div class="card-body">
+       <h3 class="card-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+
+        <p class="card-text">{{ post.body|truncatewords:50|linebreaks }}</p>
+     </div>
+     <ul class="list-group list-group-flush">
+       <li class="list-group-item ">Published {{ post.publish }} by {{ post.author }}</li>
+    </div>
+              <hr class="divider">
+    {% endfor %} {% endcomment %}
+    {% for post in posts %}
+    {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
+    <!-- row-->
+      <!--First column-->
+      <div class="col-md-4 animated wow fadeIn" data-wow-delay="0.2s">
+        <!--Card-->
+        <div class="card mb-r">
+          <!--Card image-->
+          <img class="card-img-top img-fluid img-thumbnail width: 100% \9;" style='background-color:#6ec6ff' src="{{ MEDIA_URL}}{{ post.illustration }}" height="420" alt="Blog image missing">
+          <!--Card content-->
+          <div class="card-body">
+            <!--Title-->
+            <h5 class="card-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+            <!--Text-->
+            <p class="card-text">{{ post.body|truncatewords:10|linebreaks }}</p>
+          </div>
+         <ul class="list-group list-group-flush">
+           <li class="list-group-item ">Published {{ post.publish }} by {{ post.author }}</li>
+        </div>
+       </div>
+
+     {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing -->
+      {%  endif %}
+    {% endfor %}
+
+    {% include "blog/pagination.html" with page=posts %}
+
+{% endblock blogcontent %}

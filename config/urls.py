@@ -2,8 +2,17 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
+from django.views.static import serve
+from blog.sitemaps import PostSitemap
+
+# Define sitemaps
+sitemaps = {
+    'posts': PostSitemap,
+    # 'pages': FlatpageSitemap
+}
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
@@ -21,7 +30,10 @@ urlpatterns = [
     url(r'^tours/', include('tours.urls', namespace='tours')),
     url(r'^contactus/', include('contactus.urls', namespace='contactus')),
     url(r'^privacy/', TemplateView.as_view(template_name='pages/privacy.html'), name='privacy'),
-    url(r'^terms/', TemplateView.as_view(template_name='pages/terms.html'), name='terms')
+    url(r'^terms/', TemplateView.as_view(template_name='pages/terms.html'), name='terms'),
+    url(r'blog/', include('blog.urls')),
+    url(r'^tinymce/', include('tinymce.urls')), #used for WISIWYG blog tool
+    url(r'^sitemap\.xml$',sitemap, {'sitemaps':sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
@@ -33,6 +45,7 @@ if settings.DEBUG:
         url(r'^403/$', default_views.permission_denied, kwargs={'exception': Exception('Permission Denied')}),
         url(r'^404/$', default_views.page_not_found, kwargs={'exception': Exception('Page not Found')}),
         url(r'^500/$', default_views.server_error),
+        url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT,}),
     ]
     if 'debug_toolbar' in settings.INSTALLED_APPS:
         import debug_toolbar
