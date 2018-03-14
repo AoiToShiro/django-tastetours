@@ -92,4 +92,3 @@ whichcraft==0.4.1
 wincertstore==0.2
 django-debug-toolbar==1.9.1
 django-extensions==1.9.9
-django-tinymce==2.7.0

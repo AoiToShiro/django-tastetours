@@ -2,6 +2,8 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 # Create your models here.
 # Custom Manager
@@ -22,7 +24,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=250, unique_for_date='publish')
     author = models.ForeignKey(settings.AUTH_USER_MODEL, models.CASCADE, related_name='blog_posts')
     illustration = models.ImageField(null=True, blank=True, upload_to="blog/", default='images/LogoLarge.svg')
-    body = models.TextField()
+    body = RichTextUploadingField()
     highlight = models.BooleanField(default=False)
     tags = models.ManyToManyField("self",related_name='blog_tags')
     publish = models.DateTimeField(default=timezone.now)

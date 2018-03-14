@@ -8,6 +8,7 @@ from django.views import defaults as default_views
 from django.views.static import serve
 from blog.sitemaps import PostSitemap
 
+
 # Define sitemaps
 sitemaps = {
     'posts': PostSitemap,
@@ -22,6 +23,7 @@ urlpatterns = [
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
 
+
     # User management
     url(r'^users/', include('tastetoursjapan_project.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
@@ -32,7 +34,7 @@ urlpatterns = [
     url(r'^privacy/', TemplateView.as_view(template_name='pages/privacy.html'), name='privacy'),
     url(r'^terms/', TemplateView.as_view(template_name='pages/terms.html'), name='terms'),
     url(r'blog/', include('blog.urls')),
-    url(r'^tinymce/', include('tinymce.urls')), #used for WISIWYG blog tool
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')), # WYSIWIG editor
     url(r'^sitemap\.xml$',sitemap, {'sitemaps':sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -46,7 +48,9 @@ if settings.DEBUG:
         url(r'^404/$', default_views.page_not_found, kwargs={'exception': Exception('Page not Found')}),
         url(r'^500/$', default_views.server_error),
         url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT,}),
+
     ]
+
     if 'debug_toolbar' in settings.INSTALLED_APPS:
         import debug_toolbar
         urlpatterns = [

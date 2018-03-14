@@ -50,6 +50,9 @@ for (var i = 0, li; li = interactiveListItems[i]; i++) {
   });
 }
 
+ed.on('init', function (ed) {
+    ed.target.editorCommands.execCommand("fontName", false, "Roboto");
+});
 // datepicker
 // Data Picker Initialization
 // not used in prototype - commented out
