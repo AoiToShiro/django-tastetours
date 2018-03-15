@@ -17,12 +17,17 @@
           </div>
           <div class="col-md-4 jumbotron">
               <h4>Blog Highlights</h4>
-              {% comment %} <ul>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-              </ul> {% endcomment %}
 
-              <a href="#"></a>
+              {% for post in posts %}
+              {% if post.highlight is True %}
+              <ul>
+                <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+              </ul>
+              {% endif %}
+              {% endfor %}
+
+
+
               <br><br>
               <hr>
               <h4>Archive</h4>
