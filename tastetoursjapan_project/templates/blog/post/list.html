@@ -6,7 +6,6 @@
    <h2 class="page-header">Taste Tours - Recent Posts</h2>
    <hr class="divider">
 
-
     {% comment %} {% for post in posts|slice:":1" %}
 
 
@@ -37,10 +36,11 @@
             <!--Title-->
             <h5 class="card-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
             <!--Text-->
-            <p class="card-text">{{ post.body|safe|truncatewords:10|linebreaks }}</p>
+            <p class="card-text">{{ post.body|truncatewords:10|linebreaks }}</p>
           </div>
          <ul class="list-group list-group-flush">
            <li class="list-group-item ">Published {{ post.publish }} by {{ post.author }}</li>
+           </ul>
         </div>
        </div>
 
