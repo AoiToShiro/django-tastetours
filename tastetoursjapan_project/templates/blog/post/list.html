@@ -6,22 +6,6 @@
    <h2 class="page-header">Taste Tours - Recent Posts</h2>
    <hr class="divider">
 
-    {% comment %} {% for post in posts|slice:":1" %}
-
-
-    <div class="card ">
-      <img class="card-img-top img-fluid width: 100% \9;" style='background-color:#6ec6ff' src="{{ MEDIA_URL}}{{ post.illustration }}" height="420" alt="Blog image missing">
-
-      <div class="card-body">
-       <h3 class="card-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
-
-        <p class="card-text">{{ post.body|truncatewords:50|linebreaks }}</p>
-     </div>
-     <ul class="list-group list-group-flush">
-       <li class="list-group-item ">Published {{ post.publish }} by {{ post.author }}</li>
-    </div>
-              <hr class="divider">
-    {% endfor %} {% endcomment %}
     {% for post in posts %}
     {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
     <!-- row-->
