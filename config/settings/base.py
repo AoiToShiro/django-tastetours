@@ -67,7 +67,7 @@ THIRD_PARTY_APPS = [
     # 'anymail', duplicate to production settings
     'ckeditor', # WYSIWIG editor
     'ckeditor_uploader',
-
+    'mediumeditor',
 ]
 
 # Apps specific for this project go here.
@@ -395,3 +395,32 @@ CKEDITOR_CONFIGS = {
     }
 }
 AWS_QUERYSTRING_AUTH = False # WYSIWIG editor instructions to get it to work with S3
+
+MEDIUM_EDITOR_THEME = 'bootstrap'
+MEDIUM_EDITOR_OPTIONS = {
+    'toolbar': {
+        'static': True,
+        'buttons': [
+            'bold',
+            'italic',
+            'underline',
+            'anchor',
+            'strikethrough',
+            'subscript',
+            'superscript',
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+        ]
+    },
+    'paste': {
+        'forcePlainText': True,
+        'cleanPastedHTML': False,
+        'cleanReplacements': [],
+        'cleanAttrs': ['class', 'style', 'dir'],
+        'cleanTags': ['meta']
+    }
+}
