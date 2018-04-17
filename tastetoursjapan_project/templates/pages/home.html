@@ -334,7 +334,7 @@
 
     <script>
     function initMap() {
-      var myCenter = new google.maps.LatLng(35.615703, 139.714740);
+      var myCenter = new google.maps.LatLng(35.615703, 139.714922);
       var mapCanvas = document.getElementById("edo");
       var mapOptions = {center: myCenter, zoom: 15};
       var map = new google.maps.Map(mapCanvas, mapOptions);
@@ -342,7 +342,7 @@
       marker.setMap(map);
 
       var infowindow = new google.maps.InfoWindow({
-        content: "Oustide Togoshi Ginza Train Station"
+        content: "Oustide Togoshi Ginza Train Station Platform 1"
       });
       infowindow.open(map,marker);
     }
