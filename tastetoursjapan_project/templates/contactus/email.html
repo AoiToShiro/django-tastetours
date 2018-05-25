@@ -5,7 +5,7 @@
 {% block content %}
 <br><br><br>
 <body>
-
+{% comment %} Need to figure out reCapture {% endcomment %}
 
 <h1>Contact Us</h1>
 <br>
@@ -13,6 +13,7 @@
   <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
+      {% comment %} <div class="g-recaptcha" data-sitekey=settings.GOOGLE_RECAPTCHA_SECRET_KEY></div> {% endcomment %}
       <div class="form-actions">
         <button class="btn btn-primary"type="submit">Submit</button>
       </div>
@@ -29,5 +30,8 @@
     {% endfor %}
 </ul>
 {% endif %}
+{% comment %} js {% endcomment %}
+{% comment %} <script src='https://www.google.com/recaptcha/api.js'></script> {% endcomment %}
+
 </body>
 {% endblock content %}
