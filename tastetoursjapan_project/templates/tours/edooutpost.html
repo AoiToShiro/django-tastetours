@@ -13,60 +13,20 @@
 <body>
 
 <main>
-
+{% comment %} youtube video {% endcomment %}
+<br>
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item"
+  src="https://www.youtube-nocookie.com/embed/d9jGq0HoWn8?rel=0&showinfo=0&color=white"
+  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+{% comment %} ?rel=0&showinfo=0&color=white in the youtube link is used to remove the related videos at the end of the clip {% endcomment %}
 <!--Main layout-->
-<div class="container-fluid">
-    <div class="row mt-lg-5">
 
-        <!--Product-->
-        <div class="col-sm-8 col-md-8 col-lg-4 wow fadeIn" data-wow-delay="0.2s">
-
-            <!--Carousel Wrapper-->
-            <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-                <!--Indicators-->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-                </ol>
-                <!--/.Indicators-->
-                <!--Slides-->
-                <div class="carousel-inner" role="listbox">
-                    <!--First slide-->
-                    <div class="carousel-item active" role='option'>
-                        <img class="d-block w-100" src="{% static 'images/TogoshiGinzaCrop.svg' %}" alt="First slide">
-                    </div>
-                    <!--/First slide-->
-                    <!--Second slide-->
-                    <div class="carousel-item" role='option'>
-                        <img class="d-block w-100" src="{% static 'images/MelonPan3.jpg' %}" alt="Second slide">
-                    </div>
-                    <!--/Second slide-->
-                    <!--Third slide-->
-                    <div class="carousel-item" role='option'>
-                        <img class="d-block w-100" src="{% static 'images/KrokettsBreak.jpg' %}" alt="Third slide">
-                    </div>
-                    <!--/Third slide-->
-                </div>
-                <!--/.Slides-->
-                <!--Controls-->
-                <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-                <!--/.Controls-->
-            </div>
-            <!--/.Carousel Wrapper-->
-
-        </div>
         <!--/.Product-->
 
         <!--Info-->
-        <div class="col-lg-7">
+        <div class="col-lg-12">
 
             <!--First row-->
             <div class="row wow fadeIn" data-wow-delay="0.4s">
@@ -75,26 +35,25 @@
                     <div class="product-wrapper">
 
                         <!--Product data-->
-                        <h3 class="h3-responsive mt-4 font-bold">Edo Outpost</h3>
+                        {% comment %} <h3 class="h3-responsive mt-4 font-bold">Edo Outpost</h3> {% endcomment %}
                         <hr>
 
-                        <h3>
-                            <span class="font-bold">¥5,999
-                              <span class="text-muted">per person</span></span>
 
-                        </h3>
                         <dl class="row mt-4">
-                            <dt class="col-sm-3">Tour Type</dt>
-                            <dd class="col-sm-9">Walking Tour</dd>
+
 
                             <dt class="col-sm-3">Decription</dt>
                             <dd class="col-sm-9">Street food at it's best.
-                              Togoshi Ginza is a popular shopping road where "Tokyoites" come to shop and eat.
+                              Togoshi Ginza is a popular shopping road where
+                              "Tokyoites" come to shop and eat.
                               <br>
-                              Sample many items of the most popular and seasonal street food on offer.
+                              Sample a minimum of 6 different items of the most
+                              popular and seasonal street food on offer.
                               <br>
-                              This area specialises in quality Karaage (fried chicken).</dd>
+                              This area specialises in the finest "Karaage" (fried chicken).</dd>
                             {% comment %} <dd class="col-sm-9 offset-sm-3">Donec id elit non mi porta gravida at eget metus.</dd> {% endcomment %}
+                            <dt class="col-sm-3">Tour Type</dt>
+                            <dd class="col-sm-9">Walking Tour</dd>
 
                             <dt class="col-sm-3">Tour Details</dt>
                             <dd class="col-sm-9">Start Time: 14:00<br>
@@ -111,9 +70,15 @@
                             <dt class="col-sm-3">Children</dt>
                             <dd class="col-sm-9">Children are welcome, please note we do not sell "children" tickets as they come in all shapes and appetites. We recommend sharing a single ticket between two children, but you will know your children much better than we do!</dd>
                         </dl>
+                          <hr>
+                        <h3>
+                            <span class="font-bold">All Inclusive - only ¥5,999
+                              <span class="text-muted">per person</span>
+                              <a href='https://tickets.tastetourstokyo.com/edooutpost/' class="btn btn-success btn-md">Book Now</a></span>
 
-                        <hr>
-                        <a href='https://tickets.tastetourstokyo.com/edooutpost/' class="btn btn-success btn-md">Book Now</a>
+                        </h3>
+
+
                     </div>
                     <!--Product-->
 

@@ -153,6 +153,7 @@ DATABASES = {
         'PASSWORD': os.environ['DB_PASSWORD'],
         'HOST': '127.0.0.1',
         'PORT': '5432',
+        'CONN_MAX_AGE': 60 * 10, # 10 Minutes
     }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
@@ -425,4 +426,22 @@ MEDIUM_EDITOR_OPTIONS = {
         'cleanAttrs': ['class', 'style', 'dir'],
         'cleanTags': ['meta']
     }
+}
+
+# Logging to identify performance issues
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        }
+    },
 }
