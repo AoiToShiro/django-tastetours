@@ -1,6 +1,8 @@
 {% load static i18n compress%}<!DOCTYPE html>
 <html lang="en">
   <head>
+    {% comment %} Pintrest website verification {% endcomment %}
+    <meta name="p:domain_verify" content="a65df5f9c7edc87b256dbd9dd252c8a5"/>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{% block title %}Taste Tours Tokyo{% endblock title %}</title>
@@ -131,7 +133,8 @@
       </div>
 
       {% endblock content %}
-
+      {% comment %} Pintrest script {% endcomment %}
+      <script async defer data-pin-hover="true" data-pin-tall="true" data-pin-round="true" src="//assets.pinterest.com/js/pinit.js"></script>
     </div> <!-- /container -->
 
     {% block modal %}{% endblock modal %}
