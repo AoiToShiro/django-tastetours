@@ -19,37 +19,19 @@ experience a different culture is through the food and drink they love.">
       {% comment %} <li data-target="#myCarousel" data-slide-to="4"></li> {% endcomment %}
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="container text-center">
-          <div class="carousel-caption">
+      <div class="carousel-item active align-items-center flex-column p-4">
+        <div class="container">
+          <div class="carousel-caption d-block text-center">
             <h1 class="c_header">"We believe the best way to
             experience a different culture is through the food and drink they love"</h1>
-            {% comment %} <h4>We believe the best way to
-            experience a different culture is through the food and drink they love</h4> {% endcomment %}
-            {% comment %} <p><a class="btn btn-primary" href="#" role="button">Book Now</a></p> {% endcomment %}
           </div>
         </div>
       </div>
-      {% comment %} <div class="carousel-item">
-          <img class="first-slide" src="{% static 'images/LogoLarge.svg' %}"
-          alt="Taste Tours Tokyo Logo" nopin='nopin'>
-          <div class="container">
-            <div class="carousel-caption">
-              <h1 class="display-4">We believe the best way to
-              experience a different culture is through the food and drink they love</h1>
-              <h4>We believe the best way to
-              experience a different culture is through the food and drink they love</h4>
-              <p><a class="btn btn-primary" href="#" role="button">Book Now</a></p>
-            </div>
-          </div>
-        </div> {% endcomment %}
       <div class="carousel-item">
         <img class="second-slide" src="{% static 'images/Shinjuku_night_back_street.jpg' %}" alt="Tokyo street night time" nopin='nopin'>
         <div class="container">
           <div class="carousel-caption">
             <h1 class="c_header">We are for the adventurous...</h1>
-            {% comment %} <h4>Walking Tours start from just ¥5,999 per person</h4>
-            <p><a class="btn btn-primary" href="{% url 'tours:edooutpost' %}" role="button">Tour Info</a></p> {% endcomment %}
           </div>
         </div>
       </div>
@@ -58,10 +40,7 @@ experience a different culture is through the food and drink they love.">
         <div class="container">
           <div class="carousel-caption">
             <h1 class="c_header">We are for the curious...</h1>
-            {% comment %} <h4 class="text-light">Get to know the real Tokyo</h4> {% endcomment %}
-
-            {% comment %} <p><a class="btn btn-primary" href="{% url 'tours:edooutpost' %}" role="button">Browse gallery</a></p> {% endcomment %}
-          </div>
+            </div>
         </div>
       </div>
       <div class="carousel-item">
@@ -69,9 +48,6 @@ experience a different culture is through the food and drink they love.">
         <div class="container">
           <div class="carousel-caption">
             <h1 class="c_header">We are for people open to new experiences...</h1>
-            {% comment %} <h4 class="text-white">You've come to the right place</h4> {% endcomment %}
-
-            {% comment %} <p><a class="btn btn-primary" href="#" role="button">Browse gallery</a></p> {% endcomment %}
           </div>
         </div>
       </div>
@@ -97,21 +73,29 @@ experience a different culture is through the food and drink they love.">
       <div class="col-lg-4">
         <img class="rounded" src="{% static 'images/Sakura Plain v3.0.svg' %}" alt="Outline Sakura image" width="140" height="140">
         <h2>Culture</h2>
-        <p>Each tour is a window into the unique Japanese culture, its history and people's lifestyle.</p>
+        <p>We believe that the best way to experience a different culture is
+          through the food and drink they love.</p>
+          <p>The food and drink on each and
+          every tour has been carefully selected to open up a window into
+          the unique Japanese culture.</p>
         {% comment %} <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> {% endcomment %}
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="rounded" src="{% static 'images/Chopsticks190h.png' %}" alt="Spoon and chopsticks image" width="140" height="140">
         <h2>Food & Drink</h2>
-        <p>Your tour will include unique seasonal, delicious traditional Japanese food and drink as well as Japanese versions of western favourites.</p>
+        <p>Your tour will include unique seasonal, delicious traditional
+          Japanese food and drink as well as Japanese versions of western favourites.</p>
+        <p>Each item has it's own story to tell you about Japan and
+          Japanese culture.</p>
         {% comment %} <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> {% endcomment %}
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <img class="rounded-circle" src="{% static 'images/CompassSmallNewBlue.svg' %}" alt="Compass explorer image" width="140" height="140">
         <h2>Adventure</h2>
-        <p>For those of you who like to explore, your tour will take you to Tokyo's hidden gems, away from tourist hoards.</p>
-        {% comment %} No further details available at present
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> {% endcomment %}
+        <p>For those of you who like to explore, your tour will take you to
+          Tokyo's hidden gems, away from tourist hoards.</p>
+          <p>Take a different look at the city and get closer to
+            its beating heart</p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
@@ -124,11 +108,15 @@ experience a different culture is through the food and drink they love.">
         <h2 class="featurette-heading">An adventure through food & drink.
            <br>
           <span class="text-muted">Tokyo awaits...</span></h2>
-        <p class="lead">At Taste Tours Tokyo we are passionate about Japan,  Japanese culture and cuisine.</p>
-        <p class="lead">We want to share our experience and knowledge with you through entertaining walking tours of some of the most interesting and local places in Tokyo.</p>
+        <p class="lead">At Taste Tours Tokyo we are passionate about Japan,  
+          Japanese culture and cuisine.</p>
+        <p class="lead">We want to share our experience and knowledge with you 
+          through entertaining walking tours of some of the most interesting
+          and local places in Tokyo.</p>
       </div>
       <div class="col-md-5">
-        <img class="featurette-image img-fluid mx-auto width: 100% \9;"  src="{% static 'images/TokyoTowerRouge2.jpg' %}" alt="Tokyo Tower image">
+        <img class="featurette-image img-fluid mx-auto width: 100% \9;"
+        src="{% static 'images/TokyoTowerRouge2.jpg' %}" alt="Tokyo Tower image">
       </div>
     </div>
 
@@ -147,18 +135,23 @@ experience a different culture is through the food and drink they love.">
         <div class="card mb-r">
 
             <!--Card image-->
-            <img class="img-fluid width: 100% \9;" style='background-color:#ffe3ed' src="{% static 'images/TogoshiGinzaCrop.svg' %}" alt="Togoshi Ginza image">
+            <img class="img-fluid width: 100% \9;" style='background-color:#ffe3ed'
+            src="{% static 'images/TogoshiGinzaCrop.svg' %}" alt="Togoshi Ginza image">
 
             <!--Card content-->
             <div class="card-body">
                 <!--Title-->
                 <h4 class="card-title dark-grey-text"><strong>Edo Outpost</strong></h4>
                 <!--Text-->
-                <p class="card-text">Tokyo used to be called "Edo". Walk the streets of the old Edo trading outpost "Togoshi Ginza" and sample the delicious street food on offer</p>
-                <button type="button" class="btn btn-secondary btn-md" data-toggle="modal" data-target=".bd-example-modal-lg">Location</button>
+                <p class="card-text">Tokyo used to be called "Edo". Walk the
+                  streets of the old Edo trading outpost "Togoshi Ginza" and
+                  sample the delicious street food on offer</p>
+                <button type="button" class="btn btn-secondary btn-md"
+                data-toggle="modal" data-target=".bd-example-modal-lg">Location</button>
 
 
-                <a href="{% url 'tours:edooutpost' %}" class="btn btn-primary btn-md">Tour Info</a>
+                <a href="{% url 'tours:edooutpost' %}" class="btn btn-primary btn-md">
+                  Tour Info</a>
             </div>
 
         </div>
@@ -174,12 +167,14 @@ experience a different culture is through the food and drink they love.">
         <div class="card mb-r">
 
             <!--Card image-->
-            <img class="img-fluid width: 100% \9;" style='background-color:#6ec6ff' src="{% static 'images/YanakaCrop.svg' %}" alt="Yanaka image">
+            <img class="img-fluid width: 100% \9;" style='background-color:#6ec6ff'
+            src="{% static 'images/YanakaCrop.svg' %}" alt="Yanaka image">
 
             <!--Card content-->
             <div class="card-body">
                 <!--Title-->
-                <h4 class="card-title dark-grey-text"><strong>Coming Soon!</strong></h4>
+                <h4 class="card-title dark-grey-text"><strong>
+                  Coming Soon!</strong></h4>
                 <!--Text-->
                 <p class="card-text">A walking tour of a favourite foodie haunt</p>
                 <a href="#" class="btn btn-secondary btn-md">TBC</a>
@@ -199,14 +194,17 @@ experience a different culture is through the food and drink they love.">
         <div class="card mb-r">
 
             <!--Card image-->
-            <img class="img-fluid width: 100% \9;" style='background-color:#ffe3ed' src="{% static 'images/ShinjukuCrop.svg' %}" alt="Comfort food location image">
+            <img class="img-fluid width: 100% \9;" style='background-color:#ffe3ed'
+            src="{% static 'images/ShinjukuCrop.svg' %}" alt="Comfort food location image">
 
             <!--Card content-->
             <div class="card-body">
                 <!--Title-->
-                <h4 class="card-title dark-grey-text"><strong>Coming Soon!</strong></h4>
+                <h4 class="card-title dark-grey-text"><strong>
+                  Coming Soon!</strong></h4>
                 <!--Text-->
-                <p class="card-text">A walking tour to search out the best of Japanese comfort food</p>
+                <p class="card-text">A walking tour to search out the best of
+                  Japanese comfort food</p>
                 <a href="#" class="btn btn-secondary btn-md">TBC</a>
                 <a href="#" class="btn btn-primary btn-md">TBC</a>
               </div>
@@ -219,9 +217,11 @@ experience a different culture is through the food and drink they love.">
 </div>
 <!--/.First row-->
 <div class="container">
-  <p class="lead">Looking for the full V.I.P. treatment? Contact us to arrange a private tour.</p>
+  <p class="lead">Looking for the full V.I.P. treatment?
+    Contact us to arrange a private tour.</p>
   <form class="form-inline px-3">
-    <a href="{% url 'contactus:email' %}" class="btn btn-secondary btn-md">Contact Us</a>
+    <a href="{% url 'contactus:email' %}" class="btn btn-secondary btn-md">
+      Contact Us</a>
   </form>
 </div>
 
@@ -235,7 +235,8 @@ experience a different culture is through the food and drink they love.">
 {% comment %} date picker to take user to the ticket site {% endcomment %}
 
     <h2 class="featurette-heading">Check Tour Availability</h2>
-        <a href='https://tickets.tastetourstokyo.com/?style=list' class="btn btn-primary btn-md">Search</a>
+        <a href='https://tickets.tastetourstokyo.com/?style=list'
+        class="btn btn-primary btn-md">Search</a>
 
 
 {% comment %} unsuccessful datepicker code {% endcomment %}
@@ -260,9 +261,14 @@ experience a different culture is through the food and drink they love.">
       <div class="col order-md-1">
         <div class="jumbotron" style="background-color:#ffeeff">
           <ul class="fa-ul jumbowrap">
-            <li><span class="fa-li"><i class="far fa-comment fa-lg"></i></span><h4>Our guides are fluent in English</h4></li>
-            <li><span class="fa-li"><i class="fas fa-camera fa-lg"></i></span><h4>We take you to parts of the city that few tourists experience</h4></li>
-            <li><span class="fa-li"><i class="fas fa-utensils fa-lg"></i></span><h4>We carefully select the best food & drink experiences at each location</h4></li>
+            <li><span class="fa-li"><i class="far fa-comment fa-lg"></i></span>
+              <h4>Our guides are fluent in English</h4></li>
+            <li><span class="fa-li"><i class="fas fa-camera fa-lg"></i></span>
+              <h4>We take you to parts of the city that few tourists find
+              </h4></li>
+            <li><span class="fa-li"><i class="fas fa-utensils fa-lg"></i></span>
+              <h4>We carefully select the best food & drink experiences at each
+                location</h4></li>
           </ul>
         </div>
 
@@ -271,9 +277,13 @@ experience a different culture is through the food and drink they love.">
       <div class="col order-md-2">
         <div class="jumbotron" style="background-color:#ffeeff">
         <ul class="fa-ul jumbowrap">
-          <li><span class="fa-li"><i class="fas fa-sync-alt fa-lg"></i></span><h4>We regularly change our schedule to include seasonal treats</h4></li>
-          <li><span class="fa-li"><i class="fas fa-check fa-lg"></i></span><h4>We make sure portion sizes are just right so you can taste everything</h4></li>
-          <li><span class="fa-li"><i class="fas fa-battery-full fa-lg"></i></span><h4>You won't leave a tour hungry!</h4></li>
+          <li><span class="fa-li"><i class="fas fa-sync-alt fa-lg"></i></span>
+            <h4>We regularly update our schedule to include seasonal treats</h4></li>
+          <li><span class="fa-li"><i class="fas fa-check fa-lg"></i></span>
+            <h4>We make sure portion sizes are just right so you can taste everything
+            </h4></li>
+          <li><span class="fa-li"><i class="fas fa-battery-full fa-lg">
+          </i></span><h4>You won't leave a tour hungry!</h4></li>
         </ul>
        </div>
       </div>

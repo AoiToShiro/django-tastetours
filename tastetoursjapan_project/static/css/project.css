@@ -163,19 +163,19 @@ body {
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .c_header {
-    font-size: 3em;
+    font-size: 12em;
   }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .c_header {
-    font-size: 4em;
+    font-size: 25em;
   }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .c_header {
-    font-size: 5em;
+    font-size: 16em;
   }
 
 /* // Extra large devices (large desktops, 1200px and up) */
