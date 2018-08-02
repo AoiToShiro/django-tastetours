@@ -13,3 +13,24 @@ class ContactForm(forms.Form):
         self.fields['from_email'].label = "Your email:"
         self.fields['subject'].label = "Subject:"
         self.fields['message'].label = "What would you like to ask us?"
+        # Google reCaptcha
+        # self.request = kwargs.pop('request', None)
+        # super(MyModelForm, self).__init__(*args, **kwargs)
+
+# google recaptcha
+    # def clean(self):
+    #         ca = self.request.POST["g-recaptcha-response"]
+    #         url = "https://www.google.com/recaptcha/api/siteverify"
+    #         params = {
+    #             'secret': config.RECAPTCHA_SECRET_KEY,
+    #             'response': ca,
+    #             'remoteip': utility.get_client_ip(self.request)
+    #         }
+    #         verify_rs = requests.get(url, params=params, verify=True)
+    #         verify_rs = verify_rs.json()
+    #         status = verify_rs.get("success", False)
+    #         if not status:
+    #             raise forms.ValidationError(
+    #                 _('Captcha Validation Failed.'),
+    #                 code='invalid',
+    #             )

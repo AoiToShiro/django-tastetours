@@ -4,21 +4,30 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+{% block extra_head_tags %}
+<title>Contact Us – Tour info and requests | Taste Tours Tokyo</title>
+<meta name="description" content="Please use the form to contact us at
+Taste Tours Tokyo for private tours or special queries.">
+{% endblock %}
+
 <body>
 {% comment %} Need to figure out reCapture {% endcomment %}
-
-<h1>Contact Us</h1>
 <br>
-<div class="form-group">
-  <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      {% comment %} <div class="g-recaptcha" data-sitekey=settings.GOOGLE_RECAPTCHA_SECRET_KEY></div> {% endcomment %}
-      <div class="form-actions">
-        <button class="btn btn-primary"type="submit">Submit</button>
-      </div>
-  </form>
-</div>
+<br>
+<br>
+<h1>Contact Taste Tours Tokyo</h1>
+
+
+  <div class="form-group">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% comment %} <div class="g-recaptcha" data-sitekey=settings.GOOGLE_RECAPTCHA_SECRET_KEY></div> {% endcomment %}
+        <div class="form-actions">
+          <button class="btn btn-primary"type="submit">Submit</button>
+        </div>
+    </form>
+  </div>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}

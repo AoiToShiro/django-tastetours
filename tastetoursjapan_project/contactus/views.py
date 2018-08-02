@@ -17,19 +17,6 @@ def emailView(request):
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
-            # ''' Begin reCAPTCHA validation ''' Need to figure our reCapture
-            # recaptcha_response = request.POST.get('g-recaptcha-response')
-            # url = 'https://www.google.com/recaptcha/api/siteverify'
-            # values = {
-            #     'secret': "6LfZdVsUAAAAAOaNhC1XIaY7u-CQrOGpTjcJAx2p",
-            #     'response': recaptcha_response
-            # }
-            # data = urllib.parse.urlencode(values).encode()
-            # req =  urllib.request.Request(url, data=data)
-            # response = urllib.request.urlopen(req)
-            # result = json.loads(response.read().decode())
-            # ''' End reCAPTCHA validation '''
-
             contact_name = form.cleaned_data['contact_name']
             subject = form.cleaned_data['subject']
             from_email = form.cleaned_data['from_email']

@@ -3,9 +3,12 @@
 {% block content %}
 
 <head>
-    <title>{% block title %}{% endblock %}</title>
     {{ form.media }}
-    {% block extra_head_tags %}{% endblock %}
+    {% block extra_head_tags %}
+    <title>Taste Tours - blog posts | Taste Tours Tokyo</title>
+    <meta name="description" content="Just some of our thoughts about Tokyo,
+    Japan, Japanese food and culture. Why not take a look?">
+    {% endblock %}
 </head>
 
 <body>
