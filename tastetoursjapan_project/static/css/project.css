@@ -75,11 +75,11 @@ body {
   }
 
 .carousel .carousel-control-prev-icon{
-  background-image:url('svg/arrow_left.svg')
+  background-image:url('/static/images/svg/arrow_left.svg')
   }
 /* url("/static/images/svg/arrow_left.svg") */
 .carousel .carousel-control-next-icon{
-  background-image:url('svg/arrow_right.svg')
+  background-image:url('/static/images/svg/arrow_right.svg')
   }
 
 .carousel .carousel-indicators li{
