@@ -160,27 +160,27 @@ body {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 /* // Extra small devices (portrait phones, less than 576px) */
-/* @media (max-width: 575.98px) {
+@media (max-width: 575.98px) {
   .c_header {
     font-size: 2.3em;
   }
 
 /* // Small devices (landscape phones, 576px and up) */
-/* @media (min-width: 576px) {
+@media (min-width: 576px) {
   .c_header {
-    font-size: 12em;
-  } */
+    font-size: 3em;
+  }
 
 /* // Medium devices (tablets, 768px and up) */
 /* @media (min-width: 768px) {
   .c_header {
-    font-size: 25em;
+    font-size: 5em;
   } */
 
 /* // Large devices (desktops, 992px and up) */
 /* @media (min-width: 992px) {
   .c_header {
-    font-size: 16em;
+    font-size: 6em;
   } */
 
 /* // Extra large devices (large desktops, 1200px and up) */
