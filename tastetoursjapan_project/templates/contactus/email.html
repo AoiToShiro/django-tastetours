@@ -17,8 +17,8 @@ Taste Tours Tokyo for private tours or special queries.">
 <br>
 <h1>Contact Taste Tours Tokyo</h1>
 
-
-  <div class="form-group">
+<div class="jumbotron">
+    <div class="form-group">
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
@@ -28,6 +28,8 @@ Taste Tours Tokyo for private tours or special queries.">
         </div>
     </form>
   </div>
+  </div>
+
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
