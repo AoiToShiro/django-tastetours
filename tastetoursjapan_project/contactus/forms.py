@@ -12,7 +12,7 @@ class ContactForm(forms.Form):
         self.fields['contact_name'].label = "Your name:"
         self.fields['from_email'].label = "Your email:"
         self.fields['subject'].label = "Subject:"
-        self.fields['message'].label = "What would you like to ask us?"
+        self.fields['message'].label = "What would you like to ask us?:"
         # Google reCaptcha
         # self.request = kwargs.pop('request', None)
         # super(MyModelForm, self).__init__(*args, **kwargs)
