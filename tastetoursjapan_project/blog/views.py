@@ -1,7 +1,19 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
+from django.conf import settings #used to implement caching
+from django.core.cache.backends.base import DEFAULT_TIMEOUT #used to implement caching
+from django.shortcuts import render #used to implement caching
+from django.views.decorators.cache import cache_page #used to implement caching
 from .models import Post
+
+# Cache requirements
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
+
+
+@cache_page(CACHE_TTL)
+def post_list_view(request):
+    return render(request, 'blog/post/list.html', {'posts': posts})
 
 # Create your views here.
 
