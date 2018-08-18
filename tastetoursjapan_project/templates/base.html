@@ -54,7 +54,13 @@
 
 
       <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #6ec6ff;">
-        <a class="navbar-brand" href="{% url 'home' %}">TasteToursTokyo.Com</a>
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="{% static 'images/LogoSmallnavbar.svg' %}" alt="Logo">
+        </a>
+        <!-- Navbar text-->
+          <span class="navbar-brand collapse navbar-collapse">
+            Taste Tours Tokyo
+          </span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
