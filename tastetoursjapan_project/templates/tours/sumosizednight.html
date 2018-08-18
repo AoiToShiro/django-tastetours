@@ -1,0 +1,255 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+{% block extra_head_tags %}
+<title>Tokyo food and drink tour – Guided Walking | Taste Tours Tokyo</title>
+<meta name="description" content="Tokyo at night. See the birthplace of sumo.
+Explore the local izakaya’s, find a sake you love and taste the dishes that
+attract film stars. Click to book.">
+{% endblock %}
+
+
+<br>
+<body>
+
+<main>
+{% comment %} youtube video {% endcomment %}
+{% comment %} <br> commented out as this is the video for edo outpost, will replace with sumo sized night
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item"
+  src="https://www.youtube-nocookie.com/embed/d9jGq0HoWn8?rel=0&showinfo=0&color=white"
+  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div> {% endcomment %}
+{% comment %} ?rel=0&showinfo=0&color=white in the youtube link is used to remove the related videos at the end of the clip {% endcomment %}
+<!--Main layout-->
+<br><br>
+<!--Carousel in place of a video-->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide" src="{% static 'images/MonnakachoStreet.jpg' %}" alt="Tokyo Monzen Nakacho night time" nopin='nopin'>
+            <div class="container">
+              </div>
+          </div>
+          <div class="carousel-item">
+            <img class="second-slide" src="{% static 'images/StandUpSakeBar.jpg' %}" alt="Monzen Nakacho stand up sake bar" nopin='nopin' lazyload>
+            <div class="container">
+
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="third-slide " src="{% static 'images/TokyoRest.jpg' %}" alt="Tokyo restaurant" nopin='nopin' lazyload>
+            <div class="container">
+
+            </div>
+          </div>
+
+        <!--/.Product-->
+
+        <!--Info-->
+        <div class="col-lg-12">
+
+            <!--First row-->
+            <div class="row wow fadeIn" data-wow-delay="0.4s">
+                <div class="col-md-12 col-lg-12 col-md-12">
+                    <!--Product-->
+                    <div class="product-wrapper">
+
+                        <!--Product data-->
+                        {% comment %} <h3 class="h3-responsive mt-4 font-bold">Edo Outpost</h3> {% endcomment %}
+                        <hr>
+                        <div class="">
+                          <h1>Sumo Sized Night - Walking food & drink tour - Tokyo - Monzen Nakacho</h1>
+
+                        </div>
+                        <hr>
+
+
+                        <dl class="row mt-4">
+
+
+                            <dt class="col-sm-3">Decription</dt>
+                            <dd class="col-sm-9">Street food at it's best.
+                              Tokyo night walking food and drink tour. Visit the birthplace of Sumo
+                              at the famous local shrine to summon a sumo sized appetite.
+                              Take in the very local vibe. Eat and drink at a famous
+                              izakaya (bar) to spot the pictures of international stars.
+                              <br><br>
+                              Find your favourite sake from the wall to wall refidgerators
+                              at the stand up sake izakaya. Finish the night off the Japanese way
+                              with deliciously cooked rice.
+                              <br><br>
+                              Eat a minimum of 6 different dishes (2 in each establishment)
+                              with one drink at each establishment (non alcoholic
+                              drinks are available please select the non alcohol ticket).
+                              </dd>
+                            {% comment %} <dd class="col-sm-9 offset-sm-3">Donec id elit non mi porta gravida at eget metus.</dd> {% endcomment %}
+                            <dt class="col-sm-3">Tour Type</dt>
+                            <dd class="col-sm-9">Walking Tour</dd>
+
+                            <dt class="col-sm-3">Tour Details</dt>
+                            <dd class="col-sm-9">Start Time: 17:00<br>
+                              Duration: 2.5 to 3 hours</dd>
+
+                            <dt class="col-sm-3">Walking distance</dt>
+                            <dd class="col-sm-9">Estimated: XX miles | X km | Moderate level of fitness required</dd>
+
+                            <dt class="col-sm-3">Meeting point</dt>
+                            <dd class="col-sm-9">XX (XXX Line)<br>
+                            Outside platform 1 (going in the direction of XX Station)<br>
+                            <a class="location" href="https://map.what3words.com/pasting.lush.remake">Link to meeting point</a></dd>
+
+                            <dt class="col-sm-3">Children</dt>
+                            <dd class="col-sm-9">In Japanese culture, children are not
+                              permitted inside the establishments selected for this tour.</dd>
+                        </dl>
+                          <hr>
+                        <h3>
+                            <span class="font-bold">All Inclusive - only ¥11,999 (including alcohol, ¥9,999 without)
+                              <span class="text-muted">per person</span>
+                              <a href='https://tickets.tastetourstokyo.com/XX' class="btn btn-success btn-md">Book Now</a></span>
+
+                        </h3>
+
+
+                    </div>
+                    <!--Product-->
+
+                </div>
+            </div>
+            <!--/.First row-->
+
+        </div>
+<hr>
+        {% comment %} pinterest Why board {% endcomment %}
+        {% comment %} <a data-pin-do="embedBoard" data-pin-board-width="1200"
+        data-pin-scale-height="340" data-pin-scale-width="500"
+        href="https://www.pinterest.co.uk/tastetourstokyocom/tokyo-streetfood-walking-tour-edo-outpost/"></a> {% endcomment %}
+        <!--/.Info-->
+
+        {% comment %} <div class="col-lg-12">
+
+            <!--Grid row-->
+            <div class="row mt-5">
+
+                <!--Heading-->
+                <div class="col reviews wow fadeIn" data-wow-delay="0.4s">
+                    <h2 class="h2-responsive font-bold">Reviews</h2>
+                </div>
+
+                <!--First review-->
+                <div class="media wow fadeIn" data-wow-delay="0.2s">
+                    <a class="media-left" href="#">
+                        <img class="rounded-circle ml-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-7.jpg" alt="Generic placeholder image">
+                    </a>
+                    <div class="media-body ml-4">
+                        <h4 class="media-heading font-bold dark-grey-text">John Doe</h4>
+                        <ul class="rating inline-ul list-unstyled">
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star grey-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star grey-text"></i>
+                            </li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure
+                            soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda.
+                            Earum sit id ullam eum vel delectus!</p>
+                    </div>
+                </div>
+
+                <!--Second review-->
+                <br>
+                <div class="media wow fadeIn" data-wow-delay="0.2s">
+                    <a class="media-left" href="#">
+                        <img class="rounded-circle ml-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" alt="Generic placeholder image">
+                    </a>
+                    <div class="media-body ml-4">
+                        <h4 class="media-heading font-bold dark-grey-text">Maria Casie</h4>
+                        <ul class="rating inline-ul list-unstyled">
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure
+                            soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda.
+                            Earum sit id ullam eum vel delectus!</p>
+                    </div>
+                </div>
+
+                <!--Second review-->
+                <br>
+                <div class="media wow fadeIn" data-wow-delay="0.2s">
+                    <a class="media-left" href="#">
+                        <img class="rounded-circle ml-3" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-10.jpg" alt="Generic placeholder image">
+                    </a>
+                    <div class="media-body ml-4">
+                        <h4 class="media-heading font-bold dark-grey-text">Kate Snow</h4>
+                        <ul class="rating inline-ul list-unstyled">
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star blue-text"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-star grey-text"></i>
+                            </li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure
+                            soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda.
+                            Earum sit id ullam eum vel delectus!</p>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.Grid row-->
+
+        </div>
+        <!--/.Reviews-->
+
+    </div>
+</div> {% endcomment %}
+<!--/.Main layout-->
+
+{% comment %} pinterest print.js script - once per page just before the closing body tag {% endcomment %}
+{% comment %} <script async defer src="//assets.pinterest.com/js/pinit.js"></script> {% endcomment %}
+
+</main>
+
+
+{% endblock content %}

@@ -45,10 +45,10 @@ body {
 }
 
 /* Declare heights because of positioning of img element */
-.carousel-item {
+/* .carousel-item {
   height: 32em;
   background-color: #0C060D;
-}
+} */
 
 
 .carousel-item > img {

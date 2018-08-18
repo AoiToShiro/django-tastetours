@@ -7,4 +7,5 @@ app_name = 'tours'
 urlpatterns = [
     url(r'^$',views.tours, name='tours'),
     url(r'^edooutpost/$',views.edooutpost, name='edooutpost'),
+    url(r'^sumosizednight/$',views.sumosizednight, name='sumosizednight')
 ]
