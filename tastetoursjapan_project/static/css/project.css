@@ -18,7 +18,15 @@ body {
   }
 }
 
+/* Adjustments to the nav bar header padding */
 
+a.navbar-brand {
+  padding:0; /*adjust this accordingly until you have it centered.*/
+       }
+
+.navbar {
+  padding-bottom: 0;
+}
 /* dropdowm toggle */
 
 .container .dropdown .dropdown-menu a:hover
