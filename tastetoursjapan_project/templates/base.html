@@ -54,6 +54,10 @@
 
 
       <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #6ec6ff;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
         <a class="navbar-brand" href="{% url 'home' %}">
           <img src="{% static 'images/LogoSmallnavbar.svg' %}" alt="Logo">
         </a>
@@ -61,13 +65,11 @@
           <span class="navbar-brand collapse navbar-collapse">
             Taste Tours Tokyo
           </span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+
 
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav ml-auto">
             {% comment %} <li class="nav-item active">
               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -93,8 +95,8 @@
                 <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
               </li>
             {% endif %} {% endcomment %}
-              </li>
-                <li class="nav-item dropdown px-3">
+              {% comment %} </li> {% endcomment %}
+                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tours</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{% url 'tours:edooutpost' %}">Edo Outpost</a>
@@ -109,18 +111,22 @@
                     <a class="nav-link" href="{% url 'blog:post_list_view' %}">Blog</a>
                   </li>
                 </li>
-               <li>
-                <form class="form-inline px-3">
-                 <a href='https://tickets.tastetourstokyo.com/?style=list' class="btn btn-success btn-sm my-2">Book Now</a>
-                </form>
-                </li>
-                <li>
-                  <form class="form-inline px-3">
-                    <a href="{% url 'contactus:email' %}" class="btn btn-secondary btn-sm my-2">Contact Us</a>
-                  </form>
-                </li>
-              </ul>
+                <div class="">
+                   <ul>
+                    <form class="form-inline">
+                     <a href='https://tickets.tastetourstokyo.com/?style=list' class="btn btn-success btn-sm my-2">Book Now</a>
+                    </form>
+                  </ul>
+                  </div>
 
+                  <div class="">
+                    <ul>
+                      <form class="form-inline">
+                        <a href="{% url 'contactus:email' %}" class="btn btn-secondary btn-sm my-2">Contact Us</a>
+                      </form>
+                    </ul>
+                  </ul>
+              </div>
         </div>
       </nav>
 </div>
