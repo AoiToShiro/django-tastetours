@@ -12,5 +12,5 @@ def tours(request):
 def edooutpost(request):
     return render(request, 'tours/edooutpost.html')
 
-def sumosizednight(request):
-    return render(request, 'tours/sumosizednight.html')
+def sumofireizakaya(request):
+    return render(request, 'tours/sumofireizakaya.html')
