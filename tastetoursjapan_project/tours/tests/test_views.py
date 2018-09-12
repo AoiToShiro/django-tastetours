@@ -14,7 +14,7 @@ class HomePageTest(TestCase):
 
     def test_home_page_returns_correct_html(self):
         response = self.client.get(f'/')
-        self.assertTemplateUsed(response, 'home.html')
+        self.assertTemplateUsed(response, 'pages/home.html')
 
 
 class EdoTestCase(TestCase):
@@ -25,7 +25,7 @@ class EdoTestCase(TestCase):
 
     def test_edo_tour_returns_correct_html(self):
         response = self.client.get(f'/tours/edooutpost/')
-        self.assertTemplateUsed(response, 'edooutpost.html')
+        self.assertTemplateUsed(response, 'tours/edooutpost.html')
 
     def test_access_from_home_page(self):
         """Test that the link in the home page goes to the correct page"""
@@ -40,4 +40,4 @@ class SumoTestCase(TestCase):
 
     def test_edo_tour_returns_correct_html(self):
         response = self.client.get(f'/tours/sumofireizakaya/')
-        self.assertTemplateUsed(response, 'sumofireizakaya.html')
+        self.assertTemplateUsed(response, 'tours/sumofireizakaya.html')
