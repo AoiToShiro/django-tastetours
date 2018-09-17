@@ -165,7 +165,7 @@
                   streets of the old Edo trading outpost "Togoshi Ginza" and
                   sample the delicious street food on offer</p>
                 <button type="button" class="btn btn-secondary btn-md"
-                data-toggle="modal" data-target=".bd-example-modal-lg">Location</button>
+                data-toggle="modal" data-target="#edoModal">Location</button>
 
 
                 <a href="{% url 'tours:edooutpost' %}" class="btn btn-primary btn-md">
@@ -199,8 +199,8 @@
                 Watch the "fire" ceremony and see thousands of glass buddas at
                 the local temple before sampling the local specialities, including sake
                 in specially selected Izakays</p>
-                <a href="#" class="btn btn-secondary btn-md" data-toggle="modal"
-                data-target=".bd-example-modal-lg">Location</a>
+                <button type="button" class="btn btn-secondary btn-md" data-toggle="modal"
+                data-target="#sumoModal">Location</button>
                 <a href="{% url 'tours:sumofireizakaya' %}" class="btn btn-primary btn-md">Tour Info</a>
               </div>
 
@@ -329,7 +329,7 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
   </div><!-- /.container -->
 {% comment %} GOOGLE MAPS MODEL FUNCTIONALITY AT THE END DUE TO CONFLICTS ON Z-INDEX {% endcomment %}
 
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
+  <div id="edoModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -340,6 +340,22 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
         </div>
         <div class="modal-body">
         <div id="edo" style="width:100%;height:500px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sumoModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Sumo, Fire & Izakaya Location</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <div id="sumo" style="width:100%;height:500px"></div>
         </div>
       </div>
     </div>
@@ -355,41 +371,47 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
 
 </main>
 
-{% comment %} pinterest print.js script - once per page just before the closing body tag {% endcomment %}
-{% comment %} <script async defer src="//assets.pinterest.com/js/pinit.js"></script> {% endcomment %}
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-{% comment %} <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> {% endcomment %}
-{% comment %} don't know why these are here - dont seem to do anything, delete after testing everything {% endcomment %}
-{% comment %} <script>window.jQuery || document.write('<script src="D:\Bootstrap_Files\assets\js\vendor\jquery.min.js"><\/script>')</script>
-<script src="D:\Bootstrap_Files\assets\js\vendor\popper.min.js"></script>
-<script src="D:\Bootstrap_Files\dist\js\bootstrap.min.js"></script> {% endcomment %}
-
-
-{% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"></link>
-    <script>
-        function instantiateMyDatePicker() {
-            $('#myDatePickerId').datepicker({
-                format: 'mm/dd/yyyy',
-                startDate: '+2d',
-                autoclose: true,
-                });
-              }
-    </script> {% endcomment %}
-    {% comment %} shard date picker java script {% endcomment %}
-
-{% comment %} MDB ANIMATION {% endcomment %}
-    {% comment %} <script src="{% static 'js/mdb.js' %}"></script>
-    <script>
-    new WOW().init();
-    </script> {% endcomment %}
-
 {% comment %} GOOGLEMAPS API {% endcomment %}
 
     <script>
+
+    // var edomap, sumomap;
+    //
+    // function initMap() {
+    //     edomap = {
+    //     var myCenter = new google.maps.LatLng(35.615703, 139.714922);
+    //     var mapCanvas = document.getElementById("edo");
+    //     var mapOptions = {center: myCenter, zoom: 15};
+    //     var map = new google.maps.Map(mapCanvas, mapOptions);
+    //     var marker = new google.maps.Marker({position:myCenter});
+    //     marker.setMap(map);
+    //
+    //     var infowindow = new google.maps.InfoWindow({
+    //       content: "Oustide Togoshi Ginza Train Station Platform 1"
+    //     });
+    //   infowindow.open(map,marker);
+    //   }
+    //     sumomap = {
+    //         var myCenter = new google.maps.LatLng(35.672645, 139.794700);
+    //         var mapCanvas = document.getElementById("sumo");
+    //         var mapOptions = {center: myCenter, zoom: 15};
+    //         var map = new google.maps.Map(mapCanvas, mapOptions);
+    //         var marker = new google.maps.Marker({position:myCenter});
+    //         marker.setMap(map);
+    //
+    //         var infowindow = new google.maps.InfoWindow({
+    //           content: "Oustide Monzen Nakacho Train Station Exit 3"
+    //         });
+    //     infowindow.open(map,marker);
+    //     }
+    //
+    //
+    // }
+    // function initMap() {
+    //   initmap1();
+    //   initmap2();
+    // }
+
     function initMap() {
       var myCenter = new google.maps.LatLng(35.615703, 139.714922);
       var mapCanvas = document.getElementById("edo");
@@ -403,6 +425,20 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
       });
       infowindow.open(map,marker);
     }
+
+    // function initMap2() {
+    //   var myCenter = new google.maps.LatLng(35.672645, 139.794700);
+    //   var mapCanvas = document.getElementById("sumo");
+    //   var mapOptions = {center: myCenter, zoom: 15};
+    //   var map = new google.maps.Map(mapCanvas, mapOptions);
+    //   var marker = new google.maps.Marker({position:myCenter});
+    //   marker.setMap(map);
+    //
+    //   var infowindow = new google.maps.InfoWindow({
+    //     content: "Oustide Monzen Nakacho Train Station Exit 3"
+    //   });
+    //   infowindow.open(map,marker);
+    // }
     </script>
 
     <script async defer
