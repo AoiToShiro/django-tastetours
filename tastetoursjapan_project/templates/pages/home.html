@@ -165,9 +165,7 @@
                   streets of the old Edo trading outpost "Togoshi Ginza" and
                   sample the delicious street food on offer</p>
                 <button type="button" class="btn btn-secondary btn-md"
-                data-toggle="modal" data-target="#edoModal">Location</button>
-
-
+                data-toggle="modal" data-target="#locationModal1">Location</button>
                 <a href="{% url 'tours:edooutpost' %}" class="btn btn-primary btn-md">
                   Tour Info</a>
             </div>
@@ -196,11 +194,10 @@
                   Sumo, Fire & Izakaya</strong></h4>
                 <!--Text-->
                 <p class="card-text">Visit the shrine where the sport of sumo began.
-                Watch the "fire" ceremony and see thousands of glass buddas at
-                the local temple before sampling the local specialities, including sake
-                in specially selected Izakays</p>
+                Watch the buddhist monks perform the "fire" ceremony at the local temple
+                before enjoying the food and drink, including sake, in our favourite Izakays</p>
                 <button type="button" class="btn btn-secondary btn-md" data-toggle="modal"
-                data-target="#sumoModal">Location</button>
+                data-target="#locationModal2">Location</button>
                 <a href="{% url 'tours:sumofireizakaya' %}" class="btn btn-primary btn-md">Tour Info</a>
               </div>
 
@@ -328,10 +325,48 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
 
   </div><!-- /.container -->
 {% comment %} GOOGLE MAPS MODEL FUNCTIONALITY AT THE END DUE TO CONFLICTS ON Z-INDEX {% endcomment %}
+{% comment %} <div class="modal fade bd-example-modal-lg" id="locationModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content map" id="location1Content">
+      <div id="map1" style="width:100%;height:500px"></div>
+      <div class="buttonHolder">
+          <button id="location1">Location 1</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade bd-example-modal-lg" id="locationModal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content map" id="location2Content">
+      <div id="map2" style="width:100%;height:500px"></div>
+<!--               <div class="buttonHolder">
+          <button id="location2">Location 2</button>
+      </div> -->
+    </div>
+  </div>
+</div> {% endcomment %}
 
-  <div id="edoModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
+{% comment %} old modal that worked for edo {% endcomment %}
+{% comment %} <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title" id="exampleModalLabel">Edo Outpost Location</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+      <div id="edo" style="width:100%;height:500px"></div>
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+{% comment %} New modal versions for multiple maps {% endcomment %}
+  <div class="modal fade bd-example-modal-lg" id="locationModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+      <div class="modal-content map" id="location1Content">
         <div class="modal-header">
         <h4 class="modal-title" id="exampleModalLabel">Edo Outpost Location</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -339,23 +374,23 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
         </button>
         </div>
         <div class="modal-body">
-        <div id="edo" style="width:100%;height:500px"></div>
+        <div id="map1" style="width:100%;height:500px"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="sumoModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
+  <div id="locationModal2" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+      <div class="modal-content map" id="location2Content">
         <div class="modal-header">
         <h4 class="modal-title" id="exampleModalLabel">Sumo, Fire & Izakaya Location</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button id="location2" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
         </div>
         <div class="modal-body">
-        <div id="sumo" style="width:100%;height:500px"></div>
+        <div id="map2" style="width:100%;height:500px"></div>
         </div>
       </div>
     </div>
@@ -373,7 +408,45 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
 
 {% comment %} GOOGLEMAPS API {% endcomment %}
 
-    <script>
+
+    <script type="text/javascript">
+    // $(document).ready(function(){
+            // function initMap1() {
+            //     var location1 = {lat: 35.615703, lng: 139.714922}
+            //     var map1 = new google.maps.Map(document.getElementById('map1'), {
+            //       center: location1,
+            //       zoom: 8
+            //     });
+            //     var marker1 = new google.maps.Marker({
+            //         position: location1
+            //     });
+            //     marker1.setMap(map1);
+            // }
+            // function initMap2() {
+            //     var location2 = {lat:  35.672645, lng: 139.794700}
+            //     var map2 = new google.maps.Map(document.getElementById('map2'), {
+            //       center: location2,
+            //       zoom: 8
+            //     });
+            //     var marker2 = new google.maps.Marker({
+            //         position: location2
+            //     });
+            //     marker2.setMap(map2);
+            // }
+            // $('#locationModal1').on('show.bs.modal', function (e) {
+            //     initMap1();
+            // })
+            // $('#locationModal2').on('show.bs.modal', function (e) {
+            //     initMap2();
+            // })
+            // $('#swapModals').click(function(){
+            //     var location1Content = $("#location1Content").html();
+            //     var location2Content = $("#location2Content").html();
+            //
+            //     $('#location1Content').html(location2Content);
+            //     $('#location2Content').html(location1Content);
+            // });
+        // });
 
     // var edomap, sumomap;
     //
@@ -412,9 +485,10 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
     //   initmap2();
     // }
 
+// Working version
     function initMap() {
       var myCenter = new google.maps.LatLng(35.615703, 139.714922);
-      var mapCanvas = document.getElementById("edo");
+      var mapCanvas = document.getElementById("map1");
       var mapOptions = {center: myCenter, zoom: 15};
       var map = new google.maps.Map(mapCanvas, mapOptions);
       var marker = new google.maps.Marker({position:myCenter});
@@ -426,19 +500,19 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
       infowindow.open(map,marker);
     }
 
-    // function initMap2() {
-    //   var myCenter = new google.maps.LatLng(35.672645, 139.794700);
-    //   var mapCanvas = document.getElementById("sumo");
-    //   var mapOptions = {center: myCenter, zoom: 15};
-    //   var map = new google.maps.Map(mapCanvas, mapOptions);
-    //   var marker = new google.maps.Marker({position:myCenter});
-    //   marker.setMap(map);
-    //
-    //   var infowindow = new google.maps.InfoWindow({
-    //     content: "Oustide Monzen Nakacho Train Station Exit 3"
-    //   });
-    //   infowindow.open(map,marker);
-    // }
+    function initMap() {
+      var myCenter = new google.maps.LatLng(35.672650, 139.795184);
+      var mapCanvas = document.getElementById("map2");
+      var mapOptions = {center: myCenter, zoom: 18};
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+      var marker = new google.maps.Marker({position:myCenter});
+      marker.setMap(map);
+
+      var infowindow = new google.maps.InfoWindow({
+        content: "Oustide Monzen Nakacho Train Station Exit 5"
+      });
+      infowindow.open(map,marker);
+    }
     </script>
 
     <script async defer

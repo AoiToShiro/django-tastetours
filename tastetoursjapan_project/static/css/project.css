@@ -197,3 +197,9 @@ a.navbar-brand {
 .jumbowrap {
   word-wrap: break-word;
 }
+
+/* Google map modal */
+.map {
+  height: 100%;
+  width:500px;
+}
