@@ -141,7 +141,8 @@
 
 {% comment %} Tour cards section {% endcomment %}
 
-<h2 class="featurette-heading">Available Tours</h2>
+<h2 class="featurette-heading">Available Tours   <a href='https://tickets.tastetourstokyo.com/?style=list'
+        class="btn btn-primary btn-md">Search</a></h2>
 
 <!--First row-->
 <div class="row mt-5 wow">
@@ -160,10 +161,11 @@
             <div class="card-body">
                 <!--Title-->
                 <h4 class="card-title dark-grey-text"><strong>Edo Outpost</strong></h4>
+                <h5 class"card-subtitle">All Inclusive - only ¥5,999 per person</h5>
                 <!--Text-->
                 <p class="card-text">Tokyo used to be called "Edo". Walk the
                   streets of the old Edo trading outpost "Togoshi Ginza" and
-                  sample the delicious street food on offer</p>
+                  sample the delicious street food on offer.</p>
                 <button type="button" class="btn btn-secondary btn-md"
                 data-toggle="modal" data-target="#locationModal1">Location</button>
                 <a href="{% url 'tours:edooutpost' %}" class="btn btn-primary btn-md">
@@ -192,9 +194,10 @@
                 <!--Title-->
                 <h4 class="card-title dark-grey-text"><strong>
                   Sumo, Fire & Izakaya</strong></h4>
+                  <h5 class"card-subtitle">All Inclusive - only ¥9,999 per person</h5>
                 <!--Text-->
                 <p class="card-text">Visit the shrine where the sport of sumo began.
-                Watch the buddhist monks perform the "fire" ceremony at the local temple
+                Watch the Buddhist monks perform the "fire" ceremony at the local temple
                 before enjoying the food and drink, including sake, in our favourite Izakays</p>
                 <button type="button" class="btn btn-secondary btn-md" data-toggle="modal"
                 data-target="#locationModal2">Location</button>
@@ -215,7 +218,7 @@
 
             <!--Card image-->
             <img class="img-fluid width: 100% \9;" style='background-color:#ffe3ed'
-            src="{% static 'images/ShinjukuCrop1.jpg' %}" alt="Comfort food location image"
+            src="{% static 'images/ComfortFoodTonkatsu.jpg' %}" alt="Comfort food Tonkatsu image"
             lazyload>
 
             <!--Card content-->
@@ -252,28 +255,6 @@
 
 {% comment %} End Tour card section {% endcomment %}
 
-    <hr class="featurette-divider">
-{% comment %} date picker to take user to the ticket site {% endcomment %}
-
-    <h2 class="featurette-heading">Check Tour Availability</h2>
-        <a href='https://tickets.tastetourstokyo.com/?style=list'
-        class="btn btn-primary btn-md">Search</a>
-
-
-{% comment %} unsuccessful datepicker code {% endcomment %}
-{% comment %} <div class="container">
-  <div class="col-lg-4 col-md-12">
-  <div class="input-group date" data-provide="datepicker">
-      <input type="text" class="form-control">
-      <span class="input-group-addon"></span>
-        <span class="input-group-text">
-            <i class="fa fa-calendar"></i>
-      </div>
-    <button class="btn btn-primary btn-md" type="submit" name="button">Search</button>
-  </div>
-</div> {% endcomment %}
-
-
 
 {% comment %} Featurette for why book with us {% endcomment %}
     <hr class="featurette-divider">
@@ -283,13 +264,13 @@
       <div class="col order-md-1">
         <div class="jumbotron" style="background-color:#ffeeff">
           <ul class="fa-ul jumbowrap">
-            <li><span class="fa-li"><i class="far fa-comment fa-lg"></i></span>
-              <h4>Our guides are fluent in English</h4></li>
-            <li><span class="fa-li"><i class="fas fa-camera fa-lg"></i></span>
-              <h4>We take you to parts of the city that few tourists find
+            {% comment %} <li><span class="fa-li"><i class="far fa-comment fa-lg"></i></span> {% endcomment %}
+              <h4>* Our guides are fluent in English</h4></li>
+            {% comment %} <li><span class="fa-li"><i class="fas fa-camera fa-lg"></i></span> {% endcomment %}
+              <h4>* We take you to parts of the city that few tourists find
               </h4></li>
-            <li><span class="fa-li"><i class="fas fa-utensils fa-lg"></i></span>
-              <h4>We carefully select the best food & drink experiences at each
+            {% comment %} <li><span class="fa-li"><i class="fas fa-utensils fa-lg"></i></span> {% endcomment %}
+              <h4>* We carefully select the best food & drink experiences at each
                 location</h4></li>
           </ul>
         </div>
@@ -299,13 +280,13 @@
       <div class="col order-md-2">
         <div class="jumbotron" style="background-color:#ffeeff">
         <ul class="fa-ul jumbowrap">
-          <li><span class="fa-li"><i class="fas fa-sync-alt fa-lg"></i></span>
-            <h4>We regularly update our schedule to include seasonal treats</h4></li>
-          <li><span class="fa-li"><i class="fas fa-check fa-lg"></i></span>
-            <h4>We make sure portion sizes are just right so you can taste everything
+          {% comment %} <li><span class="fa-li"><i class="fas fa-sync-alt fa-lg"></i></span> {% endcomment %}
+            <h4>* We regularly update our schedule to include seasonal treats</h4></li>
+          {% comment %} <li><span class="fa-li"><i class="fas fa-check fa-lg"></i></span> {% endcomment %}
+            <h4>* We make sure portion sizes are just right so you can taste everything
             </h4></li>
-          <li><span class="fa-li"><i class="fas fa-battery-full fa-lg">
-          </i></span><h4>You won't leave a tour hungry!</h4></li>
+          {% comment %} <li><span class="fa-li"><i class="fas fa-battery-full fa-lg"> {% endcomment %}
+          </i></span><h4>* You won't leave a tour hungry!</h4></li>
         </ul>
        </div>
       </div>
