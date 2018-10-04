@@ -11,3 +11,6 @@ def tours(request):
 
 def edooutpost(request):
     return render(request, 'tours/edooutpost.html')
+
+def sumofireizakaya(request):
+    return render(request, 'tours/sumofireizakaya.html')

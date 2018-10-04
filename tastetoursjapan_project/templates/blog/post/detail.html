@@ -11,8 +11,12 @@
     <hr class="divider">
       <div class="container">
         <form class="form-inline px-3">
-          <a href="{% url 'blog:post_list_view' %}" class="btn btn-success btn-sm my-2">Back to blog</a>
-          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-via="tastetourstokyo" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <a href="{% url 'blog:post_list_view' %}" class="btn btn-success btn-sm my-2">
+            Back to blog</a>
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+          data-size="large" data-via="tastetourstokyo" data-show-count="false">Tweet</a>
+          <script async defer src="https://platform.twitter.com/widgets.js"
+          charset="utf-8" lazyload></script>
         </form>
       </div>
     <div class="fb-comments" data-href="{{ post.build_absolute_uri }}" data-numposts="5"></div>

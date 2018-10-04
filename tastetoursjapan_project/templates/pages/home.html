@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block content %}
+
 
 {% block extra_head_tags %}
 <title>Tokyo Tours - culture through food & drink | Taste Tours Tokyo</title>
-<meta name="description" content="Food and drink tours of Tokyo. The best way to
+<meta name="description" content="Food and drink tours Tokyo. The best way to
  experience a different culture is through the food and drink they love.
  Click to enrich your Tokyo trip.">
 {% endblock %}
+
+{% block content %}
 <br>
 <br>
 
@@ -30,9 +32,9 @@
             </div>
           </div>
        </div> {% endcomment %}
-
+<br>
        <div class="carousel-inner">
-         <div class="carousel-item active align-items-center flex-column p-4">
+         <div class="carousel-item active">
            <img class="first-slide" src="{% static 'images/HarukaSummer.jpg' %}" alt="Tokyo Manga street night time" nopin='nopin'>
            <div class="container">
              <div class="carousel-caption d-block text-center">
@@ -86,7 +88,7 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img class="rounded" src="{% static 'images/Sakura Plain v3.0.svg' %}" alt="Outline Sakura image" width="140" height="140">
+        <img class="rounded" src="{% static 'images/Sakura Plain v3.0.svg' %}" alt="Outline Sakura image" width="140" height="140" nopin='nopin'>
         <h2>Culture</h2>
         <p>We believe that the best way to experience a different culture is
           through the food and drink they love.</p>
@@ -96,7 +98,7 @@
         {% comment %} <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> {% endcomment %}
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="rounded" src="{% static 'images/Chopsticks190h.png' %}" alt="Spoon and chopsticks image" width="140" height="140">
+        <img class="rounded" src="{% static 'images/Chopsticks190h.png' %}" alt="Spoon and chopsticks image" width="140" height="140" nopin='nopin'>
         <h2>Food & Drink</h2>
         <p>Your tour will include unique seasonal, delicious traditional
           Japanese food and drink as well as Japanese versions of western favourites.</p>
@@ -105,7 +107,7 @@
         {% comment %} <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> {% endcomment %}
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="rounded-circle" src="{% static 'images/CompassSmallNewBlue.svg' %}" alt="Compass explorer image" width="140" height="140">
+        <img class="rounded-circle" src="{% static 'images/CompassSmallNewBlue.svg' %}" alt="Compass explorer image" width="140" height="140" nopin='nopin'>
         <h2>Adventure</h2>
         <p>For those of you who like to explore, your tour will take you to some of
           Tokyo's hidden gems, away from tourist hoards.</p>
@@ -139,7 +141,8 @@
 
 {% comment %} Tour cards section {% endcomment %}
 
-<h2 class="featurette-heading">Available Tours</h2>
+<h2 class="featurette-heading">Available Tours   <a href='https://tickets.tastetourstokyo.com/?style=list'
+        class="btn btn-primary btn-md">Search</a></h2>
 
 <!--First row-->
 <div class="row mt-5 wow">
@@ -151,21 +154,20 @@
 
             <!--Card image-->
             <img class="img-fluid width: 100% \9;" style='background-color:#ffe3ed'
-            src="{% static 'images/TogoshiCard.jpg' %}" alt="Togoshi Ginza image"
+            src="{% static 'images/Shumai_Japanese_Dumpling.jpg' %}" alt="Shumai Japanese Dumpling"
             lazyload>
 
             <!--Card content-->
             <div class="card-body">
                 <!--Title-->
                 <h4 class="card-title dark-grey-text"><strong>Edo Outpost</strong></h4>
+                <h5 class"card-subtitle">All Inclusive - only ¥5,999 per person</h5>
                 <!--Text-->
                 <p class="card-text">Tokyo used to be called "Edo". Walk the
                   streets of the old Edo trading outpost "Togoshi Ginza" and
-                  sample the delicious street food on offer</p>
+                  sample the delicious street food on offer.</p>
                 <button type="button" class="btn btn-secondary btn-md"
-                data-toggle="modal" data-target=".bd-example-modal-lg">Location</button>
-
-
+                data-toggle="modal" data-target="#locationModal1">Location</button>
                 <a href="{% url 'tours:edooutpost' %}" class="btn btn-primary btn-md">
                   Tour Info</a>
             </div>
@@ -184,18 +186,22 @@
 
             <!--Card image-->
             <img class="img-fluid width: 100% \9;" style='background-color:#6ec6ff'
-            src="{% static 'images/YanakaCard.jpg' %}" alt="Yanaka image"
+            src="{% static 'images/MonnakachoStandUpBar.jpg' %}" alt="Monzennakacho Stand Up Bar"
             lazyload>
 
             <!--Card content-->
             <div class="card-body">
                 <!--Title-->
                 <h4 class="card-title dark-grey-text"><strong>
-                  Coming Soon!</strong></h4>
+                  Sumo, Fire & Izakaya</strong></h4>
+                  <h5 class"card-subtitle">All Inclusive - only ¥9,999 per person</h5>
                 <!--Text-->
-                <p class="card-text">A walking tour of a favourite foodie haunt</p>
-                <a href="#" class="btn btn-secondary btn-md">TBC</a>
-                <a href="#" class="btn btn-primary btn-md">TBC</a>
+                <p class="card-text">Visit the shrine where the sport of sumo began.
+                Watch the Buddhist monks perform the "fire" ceremony at the local temple
+                before enjoying the food and drink, including sake, in our favourite Izakays</p>
+                <button type="button" class="btn btn-secondary btn-md" data-toggle="modal"
+                data-target="#locationModal2">Location</button>
+                <a href="{% url 'tours:sumofireizakaya' %}" class="btn btn-primary btn-md">Tour Info</a>
               </div>
 
         </div>
@@ -212,7 +218,7 @@
 
             <!--Card image-->
             <img class="img-fluid width: 100% \9;" style='background-color:#ffe3ed'
-            src="{% static 'images/ShinjukuCrop1.jpg' %}" alt="Comfort food location image"
+            src="{% static 'images/ComfortFoodTonkatsu.jpg' %}" alt="Comfort food Tonkatsu image"
             lazyload>
 
             <!--Card content-->
@@ -249,28 +255,6 @@
 
 {% comment %} End Tour card section {% endcomment %}
 
-    <hr class="featurette-divider">
-{% comment %} date picker to take user to the ticket site {% endcomment %}
-
-    <h2 class="featurette-heading">Check Tour Availability</h2>
-        <a href='https://tickets.tastetourstokyo.com/?style=list'
-        class="btn btn-primary btn-md">Search</a>
-
-
-{% comment %} unsuccessful datepicker code {% endcomment %}
-{% comment %} <div class="container">
-  <div class="col-lg-4 col-md-12">
-  <div class="input-group date" data-provide="datepicker">
-      <input type="text" class="form-control">
-      <span class="input-group-addon"></span>
-        <span class="input-group-text">
-            <i class="fa fa-calendar"></i>
-      </div>
-    <button class="btn btn-primary btn-md" type="submit" name="button">Search</button>
-  </div>
-</div> {% endcomment %}
-
-
 
 {% comment %} Featurette for why book with us {% endcomment %}
     <hr class="featurette-divider">
@@ -280,13 +264,13 @@
       <div class="col order-md-1">
         <div class="jumbotron" style="background-color:#ffeeff">
           <ul class="fa-ul jumbowrap">
-            <li><span class="fa-li"><i class="far fa-comment fa-lg"></i></span>
-              <h4>Our guides are fluent in English</h4></li>
-            <li><span class="fa-li"><i class="fas fa-camera fa-lg"></i></span>
-              <h4>We take you to parts of the city that few tourists find
+            {% comment %} <li><span class="fa-li"><i class="far fa-comment fa-lg"></i></span> {% endcomment %}
+              <h4>* Our guides are fluent in English</h4></li>
+            {% comment %} <li><span class="fa-li"><i class="fas fa-camera fa-lg"></i></span> {% endcomment %}
+              <h4>* We take you to parts of the city that few tourists find
               </h4></li>
-            <li><span class="fa-li"><i class="fas fa-utensils fa-lg"></i></span>
-              <h4>We carefully select the best food & drink experiences at each
+            {% comment %} <li><span class="fa-li"><i class="fas fa-utensils fa-lg"></i></span> {% endcomment %}
+              <h4>* We carefully select the best food & drink experiences at each
                 location</h4></li>
           </ul>
         </div>
@@ -296,13 +280,13 @@
       <div class="col order-md-2">
         <div class="jumbotron" style="background-color:#ffeeff">
         <ul class="fa-ul jumbowrap">
-          <li><span class="fa-li"><i class="fas fa-sync-alt fa-lg"></i></span>
-            <h4>We regularly update our schedule to include seasonal treats</h4></li>
-          <li><span class="fa-li"><i class="fas fa-check fa-lg"></i></span>
-            <h4>We make sure portion sizes are just right so you can taste everything
+          {% comment %} <li><span class="fa-li"><i class="fas fa-sync-alt fa-lg"></i></span> {% endcomment %}
+            <h4>* We regularly update our schedule to include seasonal treats</h4></li>
+          {% comment %} <li><span class="fa-li"><i class="fas fa-check fa-lg"></i></span> {% endcomment %}
+            <h4>* We make sure portion sizes are just right so you can taste everything
             </h4></li>
-          <li><span class="fa-li"><i class="fas fa-battery-full fa-lg">
-          </i></span><h4>You won't leave a tour hungry!</h4></li>
+          {% comment %} <li><span class="fa-li"><i class="fas fa-battery-full fa-lg"> {% endcomment %}
+          </i></span><h4>* You won't leave a tour hungry!</h4></li>
         </ul>
        </div>
       </div>
@@ -322,10 +306,48 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
 
   </div><!-- /.container -->
 {% comment %} GOOGLE MAPS MODEL FUNCTIONALITY AT THE END DUE TO CONFLICTS ON Z-INDEX {% endcomment %}
+{% comment %} <div class="modal fade bd-example-modal-lg" id="locationModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content map" id="location1Content">
+      <div id="map1" style="width:100%;height:500px"></div>
+      <div class="buttonHolder">
+          <button id="location1">Location 1</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade bd-example-modal-lg" id="locationModal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content map" id="location2Content">
+      <div id="map2" style="width:100%;height:500px"></div>
+<!--               <div class="buttonHolder">
+          <button id="location2">Location 2</button>
+      </div> -->
+    </div>
+  </div>
+</div> {% endcomment %}
 
-  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
+{% comment %} old modal that worked for edo {% endcomment %}
+{% comment %} <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title" id="exampleModalLabel">Edo Outpost Location</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+      <div id="edo" style="width:100%;height:500px"></div>
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+{% comment %} New modal versions for multiple maps {% endcomment %}
+  <div class="modal fade bd-example-modal-lg" id="locationModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+      <div class="modal-content map" id="location1Content">
         <div class="modal-header">
         <h4 class="modal-title" id="exampleModalLabel">Edo Outpost Location</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -333,7 +355,23 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
         </button>
         </div>
         <div class="modal-body">
-        <div id="edo" style="width:100%;height:500px"></div>
+        <div id="map1" style="width:100%;height:500px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="locationModal2" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="back">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content map" id="location2Content">
+        <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Sumo, Fire & Izakaya Location</h4>
+        <button id="location2" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+        <div id="map2" style="width:100%;height:500px"></div>
         </div>
       </div>
     </div>
@@ -349,44 +387,89 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
 
 </main>
 
-{% comment %} pinterest print.js script - once per page just before the closing body tag {% endcomment %}
-{% comment %} <script async defer src="//assets.pinterest.com/js/pinit.js"></script> {% endcomment %}
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-{% comment %} <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> {% endcomment %}
-{% comment %} don't know why these are here - dont seem to do anything, delete after testing everything {% endcomment %}
-{% comment %} <script>window.jQuery || document.write('<script src="D:\Bootstrap_Files\assets\js\vendor\jquery.min.js"><\/script>')</script>
-<script src="D:\Bootstrap_Files\assets\js\vendor\popper.min.js"></script>
-<script src="D:\Bootstrap_Files\dist\js\bootstrap.min.js"></script> {% endcomment %}
-
-
-{% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"></link>
-    <script>
-        function instantiateMyDatePicker() {
-            $('#myDatePickerId').datepicker({
-                format: 'mm/dd/yyyy',
-                startDate: '+2d',
-                autoclose: true,
-                });
-              }
-    </script> {% endcomment %}
-    {% comment %} shard date picker java script {% endcomment %}
-
-{% comment %} MDB ANIMATION {% endcomment %}
-    {% comment %} <script src="{% static 'js/mdb.js' %}"></script>
-    <script>
-    new WOW().init();
-    </script> {% endcomment %}
-
 {% comment %} GOOGLEMAPS API {% endcomment %}
 
-    <script>
+
+    <script type="text/javascript">
+    // $(document).ready(function(){
+            // function initMap1() {
+            //     var location1 = {lat: 35.615703, lng: 139.714922}
+            //     var map1 = new google.maps.Map(document.getElementById('map1'), {
+            //       center: location1,
+            //       zoom: 8
+            //     });
+            //     var marker1 = new google.maps.Marker({
+            //         position: location1
+            //     });
+            //     marker1.setMap(map1);
+            // }
+            // function initMap2() {
+            //     var location2 = {lat:  35.672645, lng: 139.794700}
+            //     var map2 = new google.maps.Map(document.getElementById('map2'), {
+            //       center: location2,
+            //       zoom: 8
+            //     });
+            //     var marker2 = new google.maps.Marker({
+            //         position: location2
+            //     });
+            //     marker2.setMap(map2);
+            // }
+            // $('#locationModal1').on('show.bs.modal', function (e) {
+            //     initMap1();
+            // })
+            // $('#locationModal2').on('show.bs.modal', function (e) {
+            //     initMap2();
+            // })
+            // $('#swapModals').click(function(){
+            //     var location1Content = $("#location1Content").html();
+            //     var location2Content = $("#location2Content").html();
+            //
+            //     $('#location1Content').html(location2Content);
+            //     $('#location2Content').html(location1Content);
+            // });
+        // });
+
+    // var edomap, sumomap;
+    //
+    // function initMap() {
+    //     edomap = {
+    //     var myCenter = new google.maps.LatLng(35.615703, 139.714922);
+    //     var mapCanvas = document.getElementById("edo");
+    //     var mapOptions = {center: myCenter, zoom: 15};
+    //     var map = new google.maps.Map(mapCanvas, mapOptions);
+    //     var marker = new google.maps.Marker({position:myCenter});
+    //     marker.setMap(map);
+    //
+    //     var infowindow = new google.maps.InfoWindow({
+    //       content: "Oustide Togoshi Ginza Train Station Platform 1"
+    //     });
+    //   infowindow.open(map,marker);
+    //   }
+    //     sumomap = {
+    //         var myCenter = new google.maps.LatLng(35.672645, 139.794700);
+    //         var mapCanvas = document.getElementById("sumo");
+    //         var mapOptions = {center: myCenter, zoom: 15};
+    //         var map = new google.maps.Map(mapCanvas, mapOptions);
+    //         var marker = new google.maps.Marker({position:myCenter});
+    //         marker.setMap(map);
+    //
+    //         var infowindow = new google.maps.InfoWindow({
+    //           content: "Oustide Monzen Nakacho Train Station Exit 3"
+    //         });
+    //     infowindow.open(map,marker);
+    //     }
+    //
+    //
+    // }
+    // function initMap() {
+    //   initmap1();
+    //   initmap2();
+    // }
+
+// Working version
     function initMap() {
       var myCenter = new google.maps.LatLng(35.615703, 139.714922);
-      var mapCanvas = document.getElementById("edo");
+      var mapCanvas = document.getElementById("map1");
       var mapOptions = {center: myCenter, zoom: 15};
       var map = new google.maps.Map(mapCanvas, mapOptions);
       var marker = new google.maps.Marker({position:myCenter});
@@ -394,6 +477,20 @@ href="https://www.pinterest.co.uk/tastetourstokyocom/the-why/"></a>
 
       var infowindow = new google.maps.InfoWindow({
         content: "Oustide Togoshi Ginza Train Station Platform 1"
+      });
+      infowindow.open(map,marker);
+    }
+
+    function initMap() {
+      var myCenter = new google.maps.LatLng(35.672650, 139.795184);
+      var mapCanvas = document.getElementById("map2");
+      var mapOptions = {center: myCenter, zoom: 18};
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+      var marker = new google.maps.Marker({position:myCenter});
+      marker.setMap(map);
+
+      var infowindow = new google.maps.InfoWindow({
+        content: "Inside Monzen Nakacho Train Station by Exit 5"
       });
       infowindow.open(map,marker);
     }

@@ -9,11 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block extra_head_tags %}{% endblock %}
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" lazyload>
-{% comment %} font awsome cdn {% endcomment %}
-    <script async defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+{% comment %} font awsome cdn Removed due to performance issues and the fact that it is only used for one section{% endcomment %}
+    {% comment %} <script async defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js" lazyload></script> {% endcomment %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-115794486-1"></script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=UA-115794486-1" lazyload></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -53,15 +53,23 @@
 
 
 
-      <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #6ec6ff;">
-        <a class="navbar-brand" href="{% url 'home' %}">TasteToursTokyo.Com</a>
+      <nav class="navbar navbar-expand-md navbar-light fixed-top text-right" style="background-color: #6ec6ff;">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="{% static 'images/LogoSmallnavbar.svg' %}" alt="Logo">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Navbar text-->
+          <span class="navbar-brand collapse navbar-collapse">
+            Taste Tours Tokyo
+          </span>
+
+
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav ml-auto text-right">
             {% comment %} <li class="nav-item active">
               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
@@ -87,11 +95,12 @@
                 <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
               </li>
             {% endif %} {% endcomment %}
-              </li>
-                <li class="nav-item dropdown px-3">
+              {% comment %} </li> {% endcomment %}
+                <li class="nav-item dropdown text-right">
                   <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tours</a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="{% url 'tours:edooutpost' %}">Edo Outpost</a>
+                    <a class="dropdown-item" href="{% url 'tours:sumofireizakaya' %}">Sumo Fire Izakaya</a>
                     {% comment %} to add as new tours come on line {% endcomment %}
                     {% comment %} <a class="dropdown-item" href="#">Another action</a>
                     <a class="dropdown-item" href="#">Something else here</a> {% endcomment %}
@@ -102,18 +111,22 @@
                     <a class="nav-link" href="{% url 'blog:post_list_view' %}">Blog</a>
                   </li>
                 </li>
-               <li>
-                <form class="form-inline px-3">
-                 <a href='https://tickets.tastetourstokyo.com/?style=list' class="btn btn-success btn-sm my-2">Book Now</a>
-                </form>
-                </li>
-                <li>
-                  <form class="form-inline px-3">
-                    <a href="{% url 'contactus:email' %}" class="btn btn-secondary btn-sm my-2">Contact Us</a>
-                  </form>
-                </li>
-              </ul>
+                <div class="">
+                   <ul>
+                    <form class="form-inline text-right">
+                     <a href='https://tickets.tastetourstokyo.com/?style=list' class="btn btn-success btn-sm my-2 ml-auto">Book Now</a>
+                    </form>
+                  </ul>
+                  </div>
 
+                  <div class="">
+                    <ul>
+                      <form class="form-inline text-right">
+                        <a href="{% url 'contactus:email' %}" class="btn btn-secondary btn-sm my-2 ml-auto">Contact Us</a>
+                      </form>
+                    </ul>
+                  </ul>
+              </div>
         </div>
       </nav>
 </div>
@@ -127,12 +140,8 @@
       {% endif %}
 
       {% block content %}
-      <br>
-      <div class="container">
-
-      </div>
-
       {% endblock content %}
+
       {% comment %} Pintrest script {% endcomment %}
       <script async defer data-pin-hover="true" data-pin-tall="true"
       data-pin-round="true" src="//assets.pinterest.com/js/pinit.js" lazyload>

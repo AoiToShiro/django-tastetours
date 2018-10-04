@@ -18,11 +18,14 @@
         <!--Card-->
         <div class="card mb-r">
           <!--Card image-->
-          <img class="card-img-top img-fluid img-thumbnail width: 100% \9;" style='background-color:#6ec6ff' src="{{ MEDIA_URL}}{{ post.illustration }}" height="420" alt="Blog image missing">
+          <img class="card-img-top img-fluid img-thumbnail width: 100% \9;"
+          style='background-color:#6ec6ff' src="{{ MEDIA_URL}}{{ post.illustration }}"
+          height="420" alt="Blog image missing">
           <!--Card content-->
           <div class="card-body">
             <!--Title-->
-            <h5 class="card-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5>
+            <h5 class="card-title"><a href="{{ post.get_absolute_url }}">
+              {{ post.title }}</a></h5>
             <!--Text-->
             <p class="card-text">{{ post.body|safe|truncatewords:10|linebreaks }}</p>
           </div>

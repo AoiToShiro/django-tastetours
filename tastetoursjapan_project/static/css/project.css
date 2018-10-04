@@ -1,21 +1,10 @@
-/* taken from bootstrap4 carousel template */
 
-/* .colourme {
-  color:#6CACE4;
-} */
 font-family: 'Roboto', sans-serif;
-
 
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
-
-/* body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
-} */
 
 body {
   padding-top: 3em;
@@ -29,7 +18,15 @@ body {
   }
 }
 
+/* Adjustments to the nav bar header padding */
 
+a.navbar-brand {
+  padding:0; /*adjust this accordingly until you have it centered.*/
+       }
+
+.navbar {
+  padding-bottom: 0;
+}
 /* dropdowm toggle */
 
 .container .dropdown .dropdown-menu a:hover
@@ -56,10 +53,10 @@ body {
 }
 
 /* Declare heights because of positioning of img element */
-.carousel-item {
+/* .carousel-item {
   height: 32em;
   background-color: #0C060D;
-}
+} */
 
 
 .carousel-item > img {
@@ -170,43 +167,6 @@ body {
     font-size: 3em;
   }
 
-/* // Medium devices (tablets, 768px and up) */
-/* @media (min-width: 768px) {
-  .c_header {
-    font-size: 5em;
-  } */
-
-/* // Large devices (desktops, 992px and up) */
-/* @media (min-width: 992px) {
-  .c_header {
-    font-size: 6em;
-  } */
-
-/* // Extra large devices (large desktops, 1200px and up) */
-/* @media (min-width: 1200px) {
-  .c_header {
-    font-size: 7em;
-  } */
-
-
-  /* Bump up size of carousel content */
-/* @media (min-width: 40em) {
-  .carousel-caption p {
-    margin-bottom: 1.25em;
-    font-size: 1.25em;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 1em;
-  }
-}
-
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7em;
-  }
-} */
 /* below code from original django-cookiecutter */
 
 /* These styles are generated from project.scss. */
@@ -236,4 +196,10 @@ body {
 /* MANAGE JUMBOTRON AND ADVENTUROUS CAROUSEL ON MOBILE */
 .jumbowrap {
   word-wrap: break-word;
+}
+
+/* Google map modal */
+.map {
+  height: 100%;
+  width:500px;
 }
