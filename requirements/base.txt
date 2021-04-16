@@ -90,7 +90,7 @@ Unidecode==0.4.21
 urllib3==1.22
 whichcraft==0.4.1
 wincertstore==0.2
-django-debug-toolbar==1.9.1
+django-debug-toolbar==1.11.1
 django-extensions==1.9.9
 django-ckeditor==5.4.0
 django-js-asset==1.0.0
